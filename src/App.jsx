@@ -24,7 +24,7 @@ import AdminLayout from './AdminLayout/admlayout';
 function App() {
   return (
     <>
-      <HashRouter >
+      <HashRouter>
        
         <Routes>
            <Route path="/" element={
@@ -65,7 +65,7 @@ function App() {
         
 
 
-      </HashRouter >
+      </HashRouter>
     </>
   )
 }
