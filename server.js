@@ -16,7 +16,7 @@ const db = mysql.createConnection({
 })
 
 // Read
-app.get("/api/posts",(req,res) => {
+app.get("/api/posts/",(req,res) => {
     db.query("SELECT * FROM contactme", (err, rows) => {
         if(err) return res.json( { error: err.message} );
         res.json(rows);
@@ -31,6 +31,13 @@ app.post("/api/create",(req,res) => {
         res.json({id: result.insertId, first_name: first_name, last_name: last_name, email: email, massage: massage});
     })
 })
+
+app.delete("/api/delete/:id", (req, res) => {
+    db.query("DELETE FROM contactme WHERE id = ?",[req.params.id],(err, rows) => {
+            if (err) {return res.json({error: err.message});}
+            res.json(rows);
+        });
+});
 
 app.listen(PORT, () => {
     console.log(`Server started at http://localhost:${PORT}`);

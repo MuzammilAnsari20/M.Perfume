@@ -1,65 +1,60 @@
-function Table(){
-    return(
-        <>
-        
+import axios from "axios";
+import { useEffect } from "react";
 
-<div class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-[6px]">
-    <table class="w-full text-sm text-left rtl:text-right text-body">
-        <thead class="text-sm text-body bg-neutral-secondary-medium border-b border-default-medium">
-            <tr>
-                <th scope="col" class="px-6! py-3! font-medium bg-[#d533f9] border-r-2 ">
-                    Product name
-                </th>
-                <th scope="col" class="px-6! py-3! font-medium bg-[#d533f9] border-r-2">
-                    <div class="flex items-center">
-                        Color
-                        <a href="#">
-                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4"/></svg>
-                        </a>
-                    </div>
-                </th>
-                <th scope="col" class="px-6! py-3! font-medium border-r-2 bg-[#d533f9]">
-                    <div class="flex items-center">
-                        Category
-                        <a href="#">
-                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4"/></svg>
-                        </a>
-                    </div>
-                </th>
-                <th scope="col" class="px-6! py-3 font-medium bg-[#d533f9]">
-                    <div class="flex items-center">
-                        Price
-                        <a href="#">
-                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4"/></svg>
-                        </a>
-                    </div>
-                </th>
-                <th scope="col" class=" font-medium bg-[#d533f9]">
-                    <div class=" text-white">Action</div>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="bg-neutral-primary-soft border-b  border-default">
-                <th scope="row" class="px-6! py-4! font-medium text-heading whitespace-nowrap">
-                    Apple MacBook Pro 17"
-                </th>
-                <td class="px-6! py-4!">
-                    Silver
-                </td>
-                <td class="px-6! py-4!">
-                    Laptop
-                </td>
-                <td class="px-6! py-4!">
-                    $2999
-                </td>
-                <td class="px-6! py-4! text-right">
-                    <a href="#" class="font-medium text-fg-brand hover:underline">Edit</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+function Table({data, setData, columns, endpoint, actions = [] }) {
+    
+
+    useEffect(() => {
+        axios.get(endpoint).then((res) => { setData(res.data) });
+    }, [endpoint]);
+
+    return (
+        <>
+
+
+            <div className="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-[6px]">
+                <table className="w-full text-sm text-left rtl:text-right text-body">
+                    <thead className="text-sm text-body bg-neutral-secondary-medium border-b border-default-medium">
+                        <tr>
+                            {columns.map((col, index) =>
+                                <th key={col.key} scope="col" className={`px-6! py-3! font-medium bg-[#d533f9] ${index < columns.length - 1 ? "border-r-2" : ""}`}>
+                                    {col.lable}
+                                </th>
+                            )}
+                            <th scope="col" className="px-6! py-3! font-medium bg-[#d533f9]">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {data.map((row, rowIndex) => (
+
+
+                            <tr key={row._id ?? rowIndex} className="bg-neutral-primary-soft border-b  border-default">
+                                {columns.map((col, colIndex) => (
+                                    colIndex === 0 ? (
+                                        <th key={col.key} scope="row" className="px-6! py-4! font-medium text-heading whitespace-nowrap">
+                                            {row[col.key]}
+                                        </th>
+                                    ) : (
+                                        <td key={col.key} className="px-6! py-4! font-medium text-heading whitespace-nowrap">
+                                            {row[col.key]}
+                                        </td>
+                                    )
+                                ))}
+                                {actions.map((action, index) => (
+                                    <td key={index} className="px-6! py-4! text-right flex justify-center">
+                                        <button className="font-medium text-fg-brand hover:underline cursor-pointer" onClick={() => action.onClick(row)}>{action.label}</button>
+                                    </td>
+                                ))}
+
+
+                            </tr>
+
+                        ))}
+                    </tbody>
+                </table>
+            </div>
 
         </>
     )

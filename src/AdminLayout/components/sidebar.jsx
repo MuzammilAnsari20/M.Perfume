@@ -28,7 +28,7 @@ function AdminSidebar({ isOpen, setIsOpen }) {
         <Link to="/admin/Message"
           className={"flex items-center gap-3 px-3! py-3! font-[Inter] text-[12px] bg-[#41015c] border-b-2 border-[#700088] transition-all overflow-hidden"}
         >
-          <FontAwesomeIcon icon={faMessage} /> Message
+          <FontAwesomeIcon icon={faMessage} /> Message<sup className="text-white bg-red-600 px-1.5! py-2! rounded-full"></sup>
         </Link>
         {/* <Link to="/admin/products"
               className={"flex items-center gap-3 px-3 py-2! border-b border-[#2c3338] transition-all overflow-hidden"}
