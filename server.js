@@ -1,6 +1,7 @@
 import express from "express";
 import mysql from "mysql2";
 import cors from "cors";
+import pusher from "./AdminLayout/components/pusher";
 
 const app = express();
 app.use(express.json());
@@ -16,9 +17,12 @@ const db = mysql.createConnection({
 })
 
 // Read
-app.get("/api/posts/",(req,res) => {
-    db.query("SELECT * FROM contactme", (err, rows) => {
-        if(err) return res.json( { error: err.message} );
+app.get("/api/massages",(req,res) => {
+    db.query("SELECT * FROM contactme WHERE is_read = false", async (err, rows) => {
+        if(err){
+              await pusher.trigger('notifications', 'message-unread', { message: 'unread' });
+        }    
+        return res.json( { error: err.message} );
         res.json(rows);
     })
 })

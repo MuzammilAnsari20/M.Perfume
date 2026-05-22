@@ -49,7 +49,7 @@ function Message(){
                             data={data}
                             setData={setData}
                             columns={contactCol}
-                            endpoint="http://localhost:8000/api/posts"
+                            endpoint="http://localhost:8000/api/massages"
                             actions={[
                                 {
                                     label: <FontAwesomeIcon icon={faTrashCan} />,
