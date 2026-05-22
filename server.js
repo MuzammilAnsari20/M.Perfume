@@ -1,7 +1,7 @@
 import express from "express";
 import mysql from "mysql2";
 import cors from "cors";
-import pusher from "./AdminLayout/components/pusher";
+import pusher from "./src/AdminLayout/components/pusher.js";
 
 const app = express();
 app.use(express.json());
@@ -16,16 +16,32 @@ const db = mysql.createConnection({
     database: "mPerfume"
 })
 
-// Read
-app.get("/api/massages",(req,res) => {
-    db.query("SELECT * FROM contactme WHERE is_read = false", async (err, rows) => {
-        if(err){
-              await pusher.trigger('notifications', 'message-unread', { message: 'unread' });
-        }    
-        return res.json( { error: err.message} );
-        res.json(rows);
-    })
-})
+app.get("/api/massages", (req, res) => {
+
+    db.query(
+        "SELECT * FROM contactme WHERE is_read = false",
+        async (err, rows) => {
+
+            if (err) {
+                return res.json({ error: err.message });
+            }
+
+            // PUSHER EVENT
+            try {
+                await pusher.trigger(
+                    "notifications",
+                    "message-unread",
+                    { count: rows ? rows.length : 0 }
+                );
+            } catch (pusherErr) {
+                 console.log("Pusher instance:", JSON.stringify(pusher.config));
+            }
+
+            res.json(rows);
+        }
+    );
+
+});
 
 // Create
 app.post("/api/create",(req,res) => {

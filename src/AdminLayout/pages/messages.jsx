@@ -24,7 +24,7 @@ function Message(){
     ]
     const handleDelete = async (row) => {
         try {
-            await axios.delete(`http://localhost:8000/api/delete/${row.id}`)
+            await axios.delete(`http://192.168.10.22:8000/api/delete/${row.id}`)
                 .then(() => {
                     setData(data.filter((item) => item.id !== row.id));
                 })
