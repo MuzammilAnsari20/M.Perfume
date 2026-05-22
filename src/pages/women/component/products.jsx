@@ -10,7 +10,7 @@ function Products(){
         <>
         <div className="w-full px-[60px]! ">
             <div className="text">
-                <h6 className="gsp-text">Women</h6>
+                <h6 className="gsp-text">Women's</h6>
                 <h5 className="gsp-text">Premium Perfume  Collection</h5>
             </div>
 
