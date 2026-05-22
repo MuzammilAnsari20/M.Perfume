@@ -2,11 +2,13 @@ import { Link, useLocation } from "react-router-dom";
 import logo_white from '../../assets/img/mens/admin_logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faMessage } from '@fortawesome/free-solid-svg-icons'
+import { Badge } from 'primereact/badge';
 
 
 
 function AdminSidebar({ isOpen, setIsOpen }) {
   const location = useLocation();
+  const unreadMessages = 0;
 
   return (
     <aside className={`bg-[linear-gradient(265deg,rgba(0,0,0,0)_0%,rgba(0,0,0,0.5)_50%,rgba(0,0,0,1)_100%)] min-h-screen flex flex-col transition-all duration-300
@@ -25,11 +27,19 @@ function AdminSidebar({ isOpen, setIsOpen }) {
         >
           <FontAwesomeIcon icon={faHouse} /> Dashboard
         </Link>
+
         <Link to="/admin/Message"
-          className={"flex items-center gap-3 px-3! py-3! font-[Inter] text-[12px] bg-[#41015c] border-b-2 border-[#700088] transition-all overflow-hidden"}
+          className={`flex items-center ${unreadMessages > 0 ? 'gap-5' : 'gap-3'} px-3! py-3! font-[Inter] text-[12px] bg-[#41015c] border-b-2 border-[#700088] transition-all overflow-hidden`}
         >
-          <FontAwesomeIcon icon={faMessage} /> Message<sup className="text-white bg-red-600 px-1.5! py-2! rounded-full"></sup>
+          <div className="relative flex items-center">
+            <FontAwesomeIcon icon={faMessage} />
+            {unreadMessages > 0 && (
+              <Badge value={unreadMessages} severity="danger" className="absolute -top-2 -right-3 bg-red-500 text-white text-[9px] w-4 h-4 flex items-center justify-center rounded-full"></Badge>
+            )}
+          </div>
+          Messages
         </Link>
+
         {/* <Link to="/admin/products"
               className={"flex items-center gap-3 px-3 py-2! border-b border-[#2c3338] transition-all overflow-hidden"}
             >

@@ -30,16 +30,16 @@ function Header() {
                 </ul>
 
                 <div className="nav-icons">
-                    <span><i className="fas fa-search"></i></span>
-                    <span><i className="fas fa-heart"></i></span>
-                    <span><i className="fas fa-shopping-cart"></i></span>
-                    <span><i className="fas fa-user"></i></span>
+                    <span className="text-[#D361EB]"><i className="fas fa-search"></i></span>
+                    <span className="text-[#D361EB]"><i className="fas fa-heart"></i></span>
+                    <span className="text-[#D361EB]"><i className="fas fa-shopping-cart"></i></span>
+                    <span className="text-[#D361EB]"><i className="fas fa-user"></i></span>
                 </div>
 
                 <div className="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span className="text-[#D361EB]"></span>
+                    <span className="text-[#D361EB]"></span>
+                    <span className="text-[#D361EB]"></span>
                 </div>
             </div>
             {/* <h1>Header</h1> */}

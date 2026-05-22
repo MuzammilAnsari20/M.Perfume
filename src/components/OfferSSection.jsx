@@ -25,7 +25,7 @@ function OfferSSection() {
 
                 <motion.h6 variants={childVariants}>Summer Fragnance Fiesto</motion.h6>
 
-                <motion.h2 variants={childVariants}>Get up to <span>25% Off</span><br />Summer Fragnance</motion.h2>
+                <motion.h2 variants={childVariants}>Get up to <span className="text-[#D361EB]">25% Off</span><br />Summer Fragnance</motion.h2>
 
                 <motion.p variants={childVariants}>Perfect for day or night, these scents will keep you feeling fresh and
                     invigorated all summer long.</motion.p>
