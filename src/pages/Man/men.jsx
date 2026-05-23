@@ -1,7 +1,7 @@
 import asideimg from '../../assets/img/Mens/m7.png'
 import Arrival from '../../components/arrival';
 import OfferSection from '../../components/OfferSection';
-import Menheader from './component/menheader'; 
+import Menheader from './component/menheader';
 import Products from './component/products';
 import Brands from '../../components/brand';
 import Blog from '../../components/blog';
@@ -11,7 +11,7 @@ function Men() {
     <>
       <Menheader />
       <OfferSection />
-      <Products/>
+      <Products />
       <Brands />
       <Arrival
         secname="Summer Collection"
@@ -19,7 +19,7 @@ function Men() {
         imgtitle="Summer Collection"
         asideimg={asideimg}
       />
-      <Blog/>
+      <Blog />
     </>
   );
 }

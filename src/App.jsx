@@ -1,5 +1,5 @@
 import asideimg from './assets/img/arrival.png'
-import { HashRouter , Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import HeroBanner from './components/heroBanner';
 import Offersection from './components/OfferSection';
 import ShopCategory from './components/shopCategory';
@@ -26,9 +26,9 @@ function App() {
   return (
     <>
       <HashRouter>
-       
+
         <Routes>
-           <Route path="/" element={
+          <Route path="/" element={
             <MainLayout>
 
               <HeroBanner />
@@ -46,24 +46,24 @@ function App() {
               <Review />
               <Blog />
 
-           </MainLayout>} 
-           />
+            </MainLayout>}
+          />
 
-            <Route path="/men" element={<MainLayout><Men /></MainLayout>} />
-            <Route path="/women" element={<MainLayout><Women /></MainLayout>} />
-            <Route path="/singleproduct" element={<MainLayout><SingleProduct /></MainLayout>} />
-            <Route path="/contact-me" element={<MainLayout><Contact /></MainLayout>} />
-            <Route path="/about" element={<MainLayout><h1>About</h1></MainLayout>} />
+          <Route path="/men" element={<MainLayout><Men /></MainLayout>} />
+          <Route path="/women" element={<MainLayout><Women /></MainLayout>} />
+          <Route path="/singleproduct" element={<MainLayout><SingleProduct /></MainLayout>} />
+          <Route path="/contact-me" element={<MainLayout><Contact /></MainLayout>} />
+          <Route path="/about" element={<MainLayout><h1>About</h1></MainLayout>} />
 
-            <Route path="/admin" element={<AdminLayout/>}>
-              <Route index element={<Dashboard />} />
-              
-              <Route path="/admin/Message" element={<Message />} />
-              <Route path="/admin/settings" element={<h1>Settings Page</h1>} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<Dashboard />} />
+
+            <Route path="/admin/Message" element={<Message />} />
+            <Route path="/admin/settings" element={<h1>Settings Page</h1>} />
           </Route>
         </Routes>
 
-        
+
 
 
       </HashRouter>

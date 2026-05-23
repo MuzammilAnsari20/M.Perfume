@@ -40,12 +40,12 @@ function AdminSidebar({ isOpen, setIsOpen }) {
         <Link to="/admin/Message"
           className={`flex items-center ${unreadMessages > 0 ? 'gap-5' : 'gap-3'} px-3! py-3! font-[Inter] text-[12px] bg-[#41015c] border-b-2 border-[#700088] transition-all overflow-hidden`}
         >
-            <div className="relative flex items-center">
-              <FontAwesomeIcon icon={faMessage} />
-              {unreadMessages > 0 && (
-                <Badge value={unreadMessages} severity="danger" className="absolute -top-2 -right-3 bg-red-500 text-white text-[9px] w-4 h-4 flex items-center justify-center rounded-full"></Badge>
-              )}
-            </div>
+          <div className="relative flex items-center">
+            <FontAwesomeIcon icon={faMessage} />
+            {unreadMessages > 0 && (
+              <Badge value={unreadMessages} severity="danger" className="absolute -top-2 -right-3 bg-red-500 text-white text-[9px] w-4 h-4 flex items-center justify-center rounded-full"></Badge>
+            )}
+          </div>
           Messages
         </Link>
 

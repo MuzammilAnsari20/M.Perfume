@@ -1,7 +1,7 @@
-import asideimg from '../../assets/img/Women/w7.jpg'
+import asideimg from '../../assets/img/women/w7.jpg'
 import Arrival from '../../components/arrival';
 import OfferSection from '../../components/OfferSection';
-import Womenheader from './component/womenheader'; 
+import Womenheader from './component/womenheader';
 import Products from './component/products';
 import Brands from '../../components/brand';
 import Blog from '../../components/blog';
@@ -12,7 +12,7 @@ function Women() {
     <>
       <Womenheader />
       <OfferSection />
-      <Products/>
+      <Products />
       <Brands />
       <Arrival
         secname="Summer Collection"
@@ -20,7 +20,7 @@ function Women() {
         imgtitle="Summer Collection"
         asideimg={asideimg}
       />
-      <Blog/>
+      <Blog />
     </>
   );
 }
