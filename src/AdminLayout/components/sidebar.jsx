@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import logo_white from '../../assets/img/mens/admin_logo.png'
+import logo_white from '../../assets/img/Mens/admin_logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faMessage } from '@fortawesome/free-solid-svg-icons'
 import { Badge } from 'primereact/badge';

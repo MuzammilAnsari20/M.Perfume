@@ -15,7 +15,7 @@ function Products(){
             </div>
 
              {/* Cards Grid */}
-        <div className="w-full h-auto mt-[2rem]! p-10! grid justify-items-center grid-cols-4 gap-10">
+        <div className="w-full h-auto mt-8! p-10! grid justify-items-center grid-cols-4 gap-10">
           {currentItems.map((product) => (
             <Link to="/" className="no-underline" key={product.id}>
               <div className="w-60 h-[65vh] rounded-[10px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-400">
