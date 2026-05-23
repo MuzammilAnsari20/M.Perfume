@@ -1,4 +1,4 @@
-import asideimg from '../../assets/img/women/w7.jpg'
+import asideimg from 'src/assets/img/women/w7.jpg'
 import Arrival from '../../components/arrival';
 import OfferSection from '../../components/OfferSection';
 import Womenheader from './component/womenheader';
