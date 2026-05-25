@@ -23,7 +23,7 @@ function useContactHook(){
         const handleSubmit = (e) => {
             e.preventDefault();
             axios.post("http://localhost:8000/api/create", formValue)
-                .then(() => navigate("/admin"))
+                .then(() => navigate("/contact-me"))
         }
 
     // Return the state and the handler so the component can use them
