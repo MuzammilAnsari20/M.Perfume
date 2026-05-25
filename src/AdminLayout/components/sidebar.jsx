@@ -14,9 +14,9 @@ function AdminSidebar({ isOpen, setIsOpen }) {
 
   useMessageNotification(setUnreadMessages);
 
-  useEffect(() => {
-    setUnreadMessages(0);
-  }, []);
+  // useEffect(() => {
+  //   setUnreadMessages(0);
+  // }, []);
 
 
   return (

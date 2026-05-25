@@ -1,27 +1,34 @@
-import { useEffect } from "react"
-import Pusher from "pusher-js"
+import { useEffect } from "react";
+import Pusher from "pusher-js";
 
 const useMessageNotification = (setUnreadMessages) => {
-     useEffect(() => {
+
+    useEffect(() => {
+
         const pusher = new Pusher("147f1a5a21bd324ba082", {
             cluster: "ap2"
         });
 
-        const channel = pusher.subscribe("messages-channel");
+        // SAME CHANNEL
+        const channel = pusher.subscribe("notifications");
 
-        channel.bind("new-message", () => {
+        // SAME EVENT
+        channel.bind("message-unread", (data) => {
 
-            setUnreadMessages((prev) => prev + 1);
+            console.log(data);
 
-        })
+            // backend se count aa raha hai
+            setUnreadMessages(data.count);
 
-        return () =>{
+        });
+
+        return () => {
             channel.unbind_all();
             channel.unsubscribe();
-        }
+        };
 
-        
-     }, []);
-}
+    }, []);
+
+};
 
 export default useMessageNotification;

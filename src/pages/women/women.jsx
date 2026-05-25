@@ -14,9 +14,9 @@ function Women() {
       <Products />
       <Brands />
       <Arrival
-        secname="Summer Collection"
+        secname="Summer Collections"
         sectag="Discover Our Summer Fragrances"
-        imgtitle="Summer Collection"
+        imgtitle="Summer Collections"
         asideimg={asideimg}
       />
       <Blog />
