@@ -30,7 +30,7 @@ function Table({data, setData, columns, endpoint, actions = [] }) {
                         {data.map((row, rowIndex) => (
 
 
-                            <tr key={row._id ?? rowIndex} className="bg-neutral-primary-soft border-b  border-default">
+                            <tr key={row._id ?? rowIndex} className={`border-b border-default ${row.is_read === 0 ? 'bg-[#f8e5ff] font-bold text-black' : 'bg-neutral-primary-soft'}`}>
                                 {columns.map((col, colIndex) => (
                                     colIndex === 0 ? (
                                         <th key={col.key} scope="row" className="px-6! py-4! font-medium text-heading whitespace-nowrap">
@@ -42,11 +42,13 @@ function Table({data, setData, columns, endpoint, actions = [] }) {
                                         </td>
                                     )
                                 ))}
-                                {actions.map((action, index) => (
-                                    <td key={index} className="px-6! py-4! text-right flex justify-center">
-                                        <button className="font-medium text-fg-brand hover:underline cursor-pointer" onClick={() => action.onClick(row)}>{action.label}</button>
-                                    </td>
-                                ))}
+                                <td className="px-6! py-4! text-right flex justify-center gap-4">
+                                    {actions.map((action, index) => (
+                                        (!action.showIf || action.showIf(row)) && (
+                                            <button key={index} className="font-medium text-fg-brand hover:underline cursor-pointer" onClick={() => action.onClick(row)}>{action.label}</button>
+                                        )
+                                    ))}
+                                </td>
 
 
                             </tr>

@@ -1,9 +1,7 @@
 import express from "express";
 import mysql from "mysql2";
 import cors from "cors";
-import pusher from "./src/AdminLayout/components/pusher.js";
-import { sync } from "motion";
-import { counter } from "@fortawesome/fontawesome-svg-core";
+import pusher from "./pusher.js";
 
 const app = express();
 app.use(express.json());
@@ -20,46 +18,152 @@ const db = mysql.createConnection({
 
 app.get("/api/massages", (req, res) => {
 
-    db.query("SELECT * FROM contactme WHERE is_read = false",(err, rows) => {
+    db.query("SELECT * FROM contactme", (err, rows) => {
+        if (err) {
+            return res.json({ error: err.message });
+        }
+        res.json(rows);
+    }
+    );
+
+});
+
+// ************************************************************
+// Create
+app.post("/api/create", (req, res) => {
+
+    const { first_name, last_name, email, massage } = req.body;
+
+    const insertQuery = `
+        INSERT INTO contactme
+        (first_name, last_name, email, massage)
+        VALUES (?, ?, ?, ?)
+    `;
+
+    db.query(
+        insertQuery,
+        [first_name, last_name, email, massage],
+        (err, result) => {
+
             if (err) {
-                return res.json({ error: err.message });
+                console.log(err);
+
+                return res.status(500).json({
+                    error: err.message
+                });
             }
-            res.json(rows);
+
+            // unread count fetch
+            db.query(
+                "SELECT COUNT(*) AS total FROM contactme WHERE is_read = 0",
+                async (err2, rows) => {
+
+                    if (err2) {
+                        console.log(err2);
+
+                        return res.status(500).json({
+                            error: err2.message
+                        });
+                    }
+
+                    const totalCount = rows[0].total;
+
+                    console.log("📊 Count:", totalCount);
+
+                    try {
+
+                        const response = await pusher.trigger(
+                            "notifications",
+                            "message-unread",
+                            {
+                                type: "new_message",
+                                count: Number(totalCount),
+                            }
+                        );
+
+                        console.log("✅ PUSHER RESPONSE:", response);
+
+                    } catch (pushError) {
+
+                        console.log("❌ PUSHER ERROR:", pushError);
+
+                    }
+
+                    return res.json({
+                        success: true,
+                        count: totalCount
+                    });
+
+                }
+            );
+
         }
     );
 
 });
 
-// Create
-app.post("/api/create",(req,res) => {
+app.get("/api/messages/unread-count", (req, res) => {
+    db.query("SELECT COUNT(*) AS total FROM contactme WHERE is_read = 0", (err, rows) => {
+        if (err) return res.status(500).json({ error: err.message });
+        res.json({ count: rows[0].total });
+    });
+});
 
-    const {first_name, last_name, email, massage} = req.body;
-
-    db.query("INSERT INTO `contactme`(`first_name`, `last_name`, `email`, `massage`) VALUES (?,?,?,?)", 
-        [first_name, last_name, email, massage] ,async (err, result) => {
-       
-        if(err) return res.json( { error: err.message} );
+app.put("/api/messages/read-all", (req, res) => {
+    db.query("UPDATE contactme SET is_read = 1 WHERE is_read = 0", async (err, result) => {
+        if (err) return res.status(500).json({ error: err.message });
         
-        db.query("SELECT * FROM contactme WHERE is_read = false", 
-            async (err2, rows) => {
-                if(!err2){
-                    await pusher.trigger( "notifications", "message-unread", {
-                        count: rows[0].total
-                    })
+        try {
+            await pusher.trigger("notifications", "message-unread", {
+                type: "read_all_messages",
+                count: 0,
+            });
+        } catch (error) {
+            console.log("Pusher Error:", error);
+        }
+        res.json({ success: true, count: 0 });
+    });
+});
+
+app.put("/api/messages/read/:id", (req, res) => {
+    db.query("UPDATE contactme SET is_read = 1 WHERE id = ?", [req.params.id], (err, result) => {
+        if (err) return res.status(500).json({ error: err.message });
+        
+        db.query("SELECT COUNT(*) AS total FROM contactme WHERE is_read = 0", async (err2, rows) => {
+            if (err2) return res.status(500).json({ error: err2.message });
+            const totalCount = rows[0].total;
+            try {
+                await pusher.trigger("notifications", "message-unread", {
+                    type: "read_message",
+                    count: Number(totalCount),
+                });
+            } catch (error) {
+                console.log("Pusher Error:", error);
+            }
+            res.json({ success: true, count: totalCount });
+        });
+    });
+});
+// ************************************************************
+app.delete("/api/delete/:id", (req, res) => {
+    db.query("DELETE FROM contactme WHERE id = ?", [req.params.id], (err, rows) => {
+        if (err) { return res.json({ error: err.message }); }
+        
+        db.query("SELECT COUNT(*) AS total FROM contactme WHERE is_read = 0", async (err2, rows2) => {
+            if (!err2) {
+                const totalCount = rows2[0].total;
+                try {
+                    await pusher.trigger("notifications", "message-unread", {
+                        type: "delete_message",
+                        count: Number(totalCount),
+                    });
+                } catch (error) {
+                    console.log("Pusher Error:", error);
                 }
             }
-        )
-        
-        res.json({id: result.insertId, first_name: first_name, last_name: last_name, email: email, massage: massage});
-    
-    })
-})
-
-app.delete("/api/delete/:id", (req, res) => {
-    db.query("DELETE FROM contactme WHERE id = ?",[req.params.id],(err, rows) => {
-            if (err) {return res.json({error: err.message});}
             res.json(rows);
         });
+    });
 });
 
 app.listen(PORT, () => {

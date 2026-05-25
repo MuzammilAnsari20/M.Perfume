@@ -5,18 +5,26 @@ import { faHouse, faMessage } from '@fortawesome/free-solid-svg-icons'
 import { Badge } from 'primereact/badge';
 import useMessageNotification from "../Hooks/notification";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 
 
 function AdminSidebar({ isOpen, setIsOpen }) {
   const location = useLocation();
+  
   const [unreadMessages, setUnreadMessages] = useState(0);
 
   useMessageNotification(setUnreadMessages);
 
-  // useEffect(() => {
-  //   setUnreadMessages(0);
-  // }, []);
+  useEffect(() => {
+    axios.get("http://localhost:8000/api/messages/unread-count")
+      .then((res) => {
+        if (res.data && res.data.count !== undefined) {
+          setUnreadMessages(res.data.count);
+        }
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
 
   return (

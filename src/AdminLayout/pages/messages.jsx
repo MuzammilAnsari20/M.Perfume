@@ -3,7 +3,7 @@ import Table from "../components/table"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 function Message(){
@@ -32,6 +32,24 @@ function Message(){
             console.log(error);
         }
     }
+
+    useEffect(() => {
+        const markAllAsRead = async () => {
+            const hasUnread = data.some(item => item.is_read === 0);
+            if (!hasUnread) return;
+
+            try {
+                await axios.put("http://localhost:8000/api/messages/read-all");
+                setData(prevData => prevData.map(item => ({ ...item, is_read: 1 })));
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        if (data.length > 0) {
+            markAllAsRead();
+        }
+    }, [data]);
     
     return(
         <div className="px-10! py-10! w-full h-[80vh]">
@@ -52,7 +70,7 @@ function Message(){
                             endpoint="http://localhost:8000/api/massages"
                             actions={[
                                 {
-                                    label: <FontAwesomeIcon icon={faTrashCan} />,
+                                    label: <FontAwesomeIcon icon={faTrashCan} className="text-red-500 text-lg hover:text-red-700 transition-colors" title="Delete" />,
                                     onClick: handleDelete
                                 }
                             ]} />
