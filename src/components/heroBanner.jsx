@@ -22,7 +22,7 @@ const childVariants = {
 function HeroBanner() {
     return (
         <>
-            <section className="h-[70vh] max-md:h-[70vh] w-full box-border flex max-md:flex-col-reverse relative items-center justify-between max-md:justify-center bg-center bg-cover " style={{ backgroundImage: `url(${header_bg})` }}>
+            <section className="h-[70vh] max-md:h-[30vh] w-full box-border flex max-md:flex-col-reverse relative items-center justify-between max-md:justify-center bg-center bg-cover " style={{ backgroundImage: `url(${header_bg})` }}>
 
                 <motion.div
                     className="hero-text "
@@ -44,7 +44,7 @@ function HeroBanner() {
                     </motion.div>
                 </motion.div>
 
-                <div className="w-[40%] max-md:w-full  h-[70%] max-md:h-[50%] relative flex items-center justify-center flex-col">
+                <div className="w-[40%] max-md:w-full  h-[70%] max-md:h-[50%] relative flex items-center justify-center flex-col max-md:hidden">
                     <img src={float_image1} alt="" className="absolute w-[130px] max-md:w-[110px] left-[35%] top-[15%] z-1 floatimg1 animate-[floatimg1_5s_ease-in-out_infinite]" />
                     <img src={float_image2} alt="" className="absolute w-[250px] max-md:w-[170px] top-[-15%] max-md:top-[0%] z-2 floatimg2 animate-[floatimg2_5s_ease-in-out_infinite]" />
                     <img src={float_image3} alt="" className="absolute w-[130px] max-md:w-[110px] right-[35%] top-[15%] z-1 floatimg3 animate-[floatimg3_5s_ease-in-out_infinite]" />
