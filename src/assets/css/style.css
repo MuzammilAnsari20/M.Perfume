@@ -17,7 +17,8 @@ body {
     scroll-behavior: smooth;
     /* handled by GSAP */
 }
-.Poppins{
+
+.Poppins {
     font-family: "Poppins", sans-serif;
 }
 
@@ -77,7 +78,7 @@ p {
 
 
 /* ================= Top Bar ================= */
-.top-bar {
+/* .top-bar {
     background: #000;
     color: #bbb;
     display: flex;
@@ -106,10 +107,10 @@ p {
 .top-bar .left-bar div:nth-of-type(2) {
     padding: 0 10px 0 0;
     border-right: 1px solid #c300eb;
-}
+} */
 
 /* ================= Navbar ================= */
-.navbar {
+/* .navbar {
     background: #000;
     display: flex;
     align-items: center;
@@ -124,89 +125,30 @@ p {
 
 .navbar .logo img {
     width: 100%;
-}
+} */
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 35px;
-}
 
-.nav-links a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 15px;
-    font-weight: bold;
-}
 
 .nav-links a.active {
     color: #da23ff;
 }
 
-.nav-icons span {
-    margin-left: 15px;
-    cursor: pointer;
-}
 
-/* Hamburger */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: #fff;
-}
-
-/* ================= Hero ================= */
-.hero {
-    height: 70vh;
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: space-between;
-    background: url('../img/header1.png') center/cover no-repeat;
-}
-
-.float-images{
-    width: 40%;
-    height: 70%;
-    /* border: 1px solid red; */
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.float-img{
-   position: absolute;
-}
-.float-img1{
-    width: 130px;
-    left: 35%;
-    top: 15%;
-    z-index: 1;
-    animation: floatimg1 5s ease-in-out infinite;
-}
-.float-img2{
-    width:250px;
+/* .float-img2 {
+    width: 250px;
     top: -15%;
     z-index: 2;
     animation: floatimg2 8s ease-in-out infinite;
 }
-.float-img3{
+
+.float-img3 {
     width: 130px;
     right: 35%;
     top: 15%;
     z-index: 1;
     animation: floatimg3 5s ease-in-out infinite;
-}
+} */
+
 @keyframes floatimg1 {
     0% {
         transform: translateY(0px) rotate(0deg);
@@ -255,58 +197,6 @@ p {
     }
 }
 
-
-/* /* .hero-text {
-    min-width: 35%;
-    z-index: 100;
-    padding-left: 100px;
-} */
-
-/* .hero-text h2 {
-    font-size: 20px;
-    color: white;
-} */
-
-/* .hero-text h1 {
-    font-size: 5rem;
-    background-image: linear-gradient(135deg, #ffffff 0%, #8c00ff 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 80px;
-    font-weight: bold;
-    font-family: "Poppins", sans-serif;
-} */
-
-/* .hero-text h2 {
-    margin: 15px 0;
-    font-weight: bold;
-}
-
-.hero-text h5 {
-    margin-bottom: 20px;
-    color: #ccc;
-    font-weight: 400
-} */
-
-/* .hero-text button {
-    padding: 12px 25px;
-    border: none;
-    background: linear-gradient(80deg, #3A1355 , #E670FB);
-    color: #fff;
-    border-radius: 25px;
-    cursor: pointer;
-} */
-
-/* .hero-image {
-    width: 40%;
-    text-align: center;
-}
-
-.hero-image img {
-    width: 100%;
-    max-width: 450px;
-} */
-
 .hero-product {
     width: 20%;
     text-align: center;
@@ -354,7 +244,7 @@ p {
         padding: 60px 30px;
     }
 
-    .float-images{
+    .float-images {
         display: none;
     }
 
@@ -382,7 +272,7 @@ p {
         top: 80px;
         right: 0;
         width: 40%;
-        background: linear-gradient(90deg, #d905ff85 , #391355fd);
+        background: linear-gradient(90deg, #d905ff85, #391355fd);
         flex-direction: column;
         align-items: center;
         gap: 20px;
@@ -390,50 +280,29 @@ p {
         display: none;
         z-index: 10000;
         animation: slideInRight 0.4s ease-out forwards;
-}
+    }
 
-@keyframes slideInRight {
-    0% {
-        transform: translateY(-10%); /* Screen se poora bahar right side par */
-        opacity: 0;
+    @keyframes slideInRight {
+        0% {
+            transform: translateY(-10%);
+            /* Screen se poora bahar right side par */
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            /* Apni asli jagah (right: 0) par */
+            opacity: 1;
+        }
     }
-    100% {
-        transform: translateY(0); /* Apni asli jagah (right: 0) par */
-        opacity: 1;
-    }
-}
 
     .nav-links.active {
         display: flex;
     }
 
-    .hamburger {
+    #hamburger {
         display: flex;
     }
-
-    .hero {
-        height: 60vh;
-        width: 100%;
-    }
-
-    .hero-text {
-        text-align: left;
-        padding-left: 0px;
-    }
-
-    .hero-text h1 {
-        font-size: 32px;
-        line-height: 50px;
-    }
-
-    .hero-text h2 {
-        font-size: 14px;
-    }
-
-    .hero-text h5 {
-        font-size: 10px;
-    }
-
     /* Features small but ROW me rahenge */
     .features {
         padding: 20px;
@@ -603,7 +472,8 @@ p {
     }
 
     .tc-text h5 {
-        font-size: 6px;;
+        font-size: 6px;
+        ;
     }
 }
 
@@ -840,7 +710,7 @@ p {
 .btn {
     display: inline-block;
     padding: 12px 28px;
-    background: linear-gradient(90deg, #E670FB , #3A1355);
+    background: linear-gradient(90deg, #E670FB, #3A1355);
     color: #fff;
     border-radius: 25px;
     text-decoration: none;

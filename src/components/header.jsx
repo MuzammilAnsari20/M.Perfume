@@ -1,27 +1,29 @@
 import main_logo from '../assets/img/logo.png'
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
     return (
         <>
-            <div className="top-bar">
-                <div className="right-bar">
-                    <div className="phon">Phone: +92 3121230283</div>
-                    <div className="email">Email: MMuzammil2311F@aptechorangi.com</div>
+            <div className="bg-black text-[#bbb] flex justify-between  px-[100px]! max-md:px-[10px]! py-2! text-[13px] border-b border-[#222]">
+                <div className="flex gap-[10px]">
+                    <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[4px]">Phone: +92 3121230283</div>
+                    <div className="max-md:text-[4px]">Email: MMuzammil2311F@aptechorangi.com</div>
                 </div>
-                <div className="left-bar">
-                    <div>Gift Card</div>
-                    <div>Track Order</div>
-                    <div>Contact Us</div>
+                <div className="flex gap-[10px]">
+                    <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[4px]">Gift Card</div>
+                    <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[4px]">Track Order</div>
+                    <div className="max-md:text-[4px]">Contact Us</div>
                 </div>
             </div>
 
-            <div className="navbar">
-                <div className="logo">
-                    <img src={main_logo} alt="" />
+            <div className="bg-black flex items-center justify-between px-[100px]! max-md:px-[10px]! relative">
+                <div className="w-[90px] max-md:w-[40px]">
+                    <img className='w-full' src={main_logo} alt="" />
                 </div>
 
-                <ul className="nav-links" id="navLinks">
+                <ul className="nav-links flex list-none gap-[35px]" id="navLinks">
                     <li><NavLink to="/" className={({isActive}) => isActive ? "active" : "" }>Home</NavLink></li>
                     <li><NavLink to="/men" className={({isActive}) => isActive ? "active" : "" }>Men</NavLink></li>
                     <li><NavLink to="/women" className={({isActive}) => isActive ? "active" : "" }>Women</NavLink></li>
@@ -29,17 +31,15 @@ function Header() {
                     <li><NavLink to="/about" className={({isActive}) => isActive ? "active" : "" }>About</NavLink></li>
                 </ul>
 
-                <div className="nav-icons">
-                    <span className="text-[#D361EB]"><i className="fas fa-search"></i></span>
-                    <span className="text-[#D361EB]"><i className="fas fa-heart"></i></span>
-                    <span className="text-[#D361EB]"><i className="fas fa-shopping-cart"></i></span>
-                    <span className="text-[#D361EB]"><i className="fas fa-user"></i></span>
+                <div className="nav-icons max-md:hidden">
+                    <span className="text-[#D361EB] ml-[15px]! cursor-pointer"><i className="fas fa-search"></i></span>
+                    <span className="text-[#D361EB] ml-[15px]! cursor-pointer"><i className="fas fa-heart"></i></span>
+                    <span className="text-[#D361EB] ml-[15px]! cursor-pointer"><i className="fas fa-shopping-cart"></i></span>
+                    <span className="text-[#D361EB] ml-[15px]! cursor-pointer"><i className="fas fa-user"></i></span>
                 </div>
 
-                <div className="hamburger" id="hamburger">
-                    <span className="text-[#D361EB]"></span>
-                    <span className="text-[#D361EB]"></span>
-                    <span className="text-[#D361EB]"></span>
+                <div className="hidden flex-col cursor-pointer gap-[5px]" id="hamburger">
+                    <span className='text-[14px]! text-[#f0a4ff]'><FontAwesomeIcon icon={faBars} /></span>
                 </div>
             </div>
             {/* <h1>Header</h1> */}
