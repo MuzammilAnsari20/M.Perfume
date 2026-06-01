@@ -37,7 +37,7 @@ function HeroBanner() {
                         whileInView="visible"
                         viewport={{ once: false, amount: 0.6 }}
                     >
-                        <motion.h1 variants={childVariants} className="text-white text-1xl max-md:text-[22px]! font-bold Poppins">M. Men</motion.h1>
+                        <motion.h1 variants={childVariants} className="text-white text-1xl max-md:text-[22px]! font-bold Poppins">Hello Muzammil</motion.h1>
                         <motion.h1 variants={childVariants} className="text-white text-6xl max-md:text-[38px]! font-bold Poppins"><span className="text-[#D361EB]">Collection</span> 2026</motion.h1>
                         <motion.h1 variants={childVariants} className="text-white text-lg max-md:text-[14px]! Poppins">Where Passion meet <span className="text-[#D361EB]">Elegance</span></motion.h1>
                         <motion.h6 variants={childVariants} className="text-white text-[12px] max-md:text-[12px]! Poppins">The Scent of Unforgettable <br /> Moments.</motion.h6>
