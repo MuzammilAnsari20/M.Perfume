@@ -8,12 +8,12 @@ function Header() {
         <>
             <div className="bg-black text-[#bbb] flex justify-between  px-[100px]! max-md:px-[10px]! py-2! text-[13px] border-b border-[#222]">
                 <div className="flex gap-[10px]">
-                    <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[4px]">Phone: +92 3121230283</div>
-                    <div className="max-md:text-[4px]">Email: MMuzammil2311F@aptechorangi.com</div>
+                    <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[6px]">Phone: +92 3121230283</div>
+                    <div className="max-md:text-[6px]">Email: MMuzammil2311F@aptechorangi.com</div>
                 </div>
                 <div className="flex gap-[10px]">
-                    <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[4px]">Gift Card</div>
-                    <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[4px]">Track Order</div>
+                    <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[6px]">Gift Card</div>
+                    <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[6px]">Track Order</div>
                     <div className="max-md:text-[4px]">Contact Us</div>
                 </div>
             </div>
