@@ -1,25 +1,25 @@
 import main_logo from '../assets/img/logo.png'
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
     return (
         <>
-            <div className="bg-black text-[#bbb] flex justify-between  px-[100px]! max-md:px-[10px]! py-2! text-[13px] border-b border-[#222]">
-                <div className="flex gap-[10px]">
-                    <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[6px]">Phone: +92 3121230283</div>
-                    <div className="max-md:text-[6px]">Email: MMuzammil2311F@aptechorangi.com</div>
+            <div className="bg-black text-[#bbb] flex justify-between  px-[100px]! max-md:px-[20px]! py-2! text-[13px] border-b border-[#222] ">
+                <div className="flex gap-[10px] w-full justify-between">
+                    <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[10px]">Phone: +92 3121230283</div>
+                    <div className="max-md:text-[10px]">Email: MMuzammil2311F@aptechorangi.com</div>
                 </div>
-                <div className="flex gap-[10px]">
+                <div className="flex gap-[10px] max-md:hidden">
                     <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[6px]">Gift Card</div>
                     <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[6px]">Track Order</div>
                     <div className="max-md:text-[4px]">Contact Us</div>
                 </div>
             </div>
 
-            <div className="bg-black flex items-center justify-between px-[100px]! max-md:px-[10px]! relative">
-                <div className="w-[90px] max-md:w-[40px]">
+            <div className="bg-black flex items-center justify-between px-[100px]! max-md:px-[20px]! relative">
+                <div className="w-[90px] max-md:w-[80px]">
                     <img className='w-full' src={main_logo} alt="" />
                 </div>
 
@@ -38,8 +38,9 @@ function Header() {
                     <span className="text-[#D361EB] ml-[15px]! cursor-pointer"><i className="fas fa-user"></i></span>
                 </div>
 
-                <div className="hidden flex-col cursor-pointer gap-[5px]" id="hamburger">
-                    <span className='text-[14px]! text-[#f0a4ff]'><FontAwesomeIcon icon={faBars} /></span>
+                <div className="hidden flex cursor-pointer gap-[5px]" id="hamburger">
+                    <span className='text-[18px]! text-[#ffffff]'><FontAwesomeIcon icon={faBars} /></span>
+                    <span className='text-[18px]! text-[#ffffff]'><FontAwesomeIcon icon={faCartShopping} /></span>
                 </div>
             </div>
             {/* <h1>Header</h1> */}
