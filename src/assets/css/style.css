@@ -202,17 +202,17 @@ p {
 @keyframes floatimg1 {
     0% {
         transform: translateY(0px) rotate(0deg);
-        left: 42%;
+        left: 38%;
     }
 
     50% {
         transform: translateY(15px) rotate(-40deg);
-        left: 34%;
+        left: 30%;
     }
 
     100% {
         transform: translateY(0px) rotate(0deg);
-        left: 42%;
+        left: 38%;
     }
 }
 
@@ -233,17 +233,17 @@ p {
 @keyframes floatimg3 {
     0% {
         transform: translateY(0px) rotate(0deg);
-        right: 42%;
+        right: 38%;
     }
 
     50% {
         transform: translateY(15px) rotate(40deg);
-        right: 34%;
+        right: 30%;
     }
 
     100% {
         transform: translateY(0px) rotate(0deg);
-        right: 42%;
+        right: 38%;
     }
 }
 }

@@ -38,16 +38,16 @@ function HeroBanner() {
                         viewport={{ once: false, amount: 0.6 }}
                     >
                         <motion.h1 variants={childVariants} className="text-white text-1xl max-md:text-[22px]! font-bold Poppins">M.Perfume</motion.h1>
-                        <motion.h1 variants={childVariants} className="text-white text-6xl max-md:text-[38px]! font-bold Poppins"><span className="text-[#D361EB]">Collection</span> 2026</motion.h1>
+                        <motion.h1 variants={childVariants} className="text-white text-6xl max-md:text-[32px]! font-bold Poppins"><span className="text-[#D361EB]">Collection</span> 2026</motion.h1>
                         <motion.h1 variants={childVariants} className="text-white text-lg max-md:text-[14px]! Poppins">Where Passion meet <span className="text-[#D361EB]">Elegance</span></motion.h1>
                         <motion.h6 variants={childVariants} className="text-white text-[12px] max-md:text-[12px]! Poppins">The Scent of Unforgettable <br /> Moments.</motion.h6>
                     </motion.div>
                 </motion.div>
 
                 <div className=" w-[40%] max-md:w-full  h-[70%] max-md:h-[40%]! relative flex items-center justify-center flex-col">
-                    <img src={float_image1} alt="" className="absolute w-[130px] max-md:w-[60px] left-[35%] max-md:left-[42%] top-[15%] z-1 floatimg1 animate-[floatimg1_5s_ease-in-out_infinite]" />
-                    <img src={float_image2} alt="" className="absolute w-[250px] max-md:w-[85px] top-[-15%] max-md:top-[-10%] z-2 floatimg2 animate-[floatimg2_5s_ease-in-out_infinite]" />
-                    <img src={float_image3} alt="" className="absolute w-[130px] max-md:w-[60px] right-[35%] max-md:right-[42%] top-[15%] z-1 floatimg3 animate-[floatimg3_5s_ease-in-out_infinite]" />
+                    <img src={float_image1} alt="" className="absolute w-[130px] max-md:w-[80px] left-[35%] max-md:left-[38%] top-[15%] z-1 floatimg1 animate-[floatimg1_5s_ease-in-out_infinite]" />
+                    <img src={float_image2} alt="" className="absolute w-[250px] max-md:w-[100px] top-[-15%] max-md:top-[-10%] z-2 floatimg2 animate-[floatimg2_5s_ease-in-out_infinite]" />
+                    <img src={float_image3} alt="" className="absolute w-[130px] max-md:w-[80px] right-[35%] max-md:right-[38%] top-[15%] z-1 floatimg3 animate-[floatimg3_5s_ease-in-out_infinite]" />
                 </div>
 
             </section >
