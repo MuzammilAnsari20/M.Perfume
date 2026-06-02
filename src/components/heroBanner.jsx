@@ -22,7 +22,7 @@ const childVariants = {
 function HeroBanner() {
     return (
         <>
-            <section className="h-[70vh] max-md:h-[40vh] w-full box-border flex max-md:flex-col-reverse relative items-center justify-between max-md:justify-center bg-center bg-cover max-md:pt-2!" style={{ backgroundImage: `url(${header_bg})` }}>
+            <section className="h-[70vh] max-md:h-[42vh] w-full box-border flex max-md:flex-col-reverse relative items-center justify-between max-md:justify-center bg-center bg-cover max-md:py-5!" style={{ backgroundImage: `url(${header_bg})` }}>
 
                 <motion.div
                     className="max-md:w-full max-md:h-[60%]! max-md:flex max-md:justify-center max-md:items-center"
