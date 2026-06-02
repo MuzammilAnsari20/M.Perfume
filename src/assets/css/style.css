@@ -230,6 +230,20 @@ p {
     }
 }
 
+#hellos {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    opacity: 1;
+}
+#hellos.active {
+    max-height: 500px;
+    transform: translateY(0);
+}
+
+
+
 @keyframes floatimg3 {
     0% {
         transform: translateY(0px) rotate(0deg);
@@ -289,50 +303,6 @@ p {
 /* Mobile */
 @media (max-width:768px) {
 
-    .top-bar {
-        display: none;
-    }
-
-    .navbar {
-        padding: 10px;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 80px;
-        right: 0;
-        width: 40%;
-        background: linear-gradient(90deg, #d905ff85, #391355fd);
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        padding: 20px 0;
-        display: none;
-        z-index: 10000;
-        animation: slideInRight 0.4s ease-out forwards;
-    }
-
-    @keyframes slideInRight {
-        0% {
-            transform: translateY(-10%);
-            /* Screen se poora bahar right side par */
-            opacity: 0;
-        }
-
-        100% {
-            transform: translateY(0);
-            /* Apni asli jagah (right: 0) par */
-            opacity: 1;
-        }
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    #hamburger {
-        display: flex;
-    }
     /* Features small but ROW me rahenge */
     .features {
         padding: 20px;
