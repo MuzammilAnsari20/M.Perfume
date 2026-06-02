@@ -34,7 +34,7 @@ function Arrival({ secname, sectag, imgtitle, imgtag, asideimg }) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, amount: 0, margin: "-5% -0px" }}
                     transition={{ duration: .8 }}
-                    style={{ backgroundImage: `url(${asideimg})` }}>
+                    style={{ backgroundImage: `url(${asideimg})`, backgroundPosition: 'center' }}>
                     <div className="aside-text">
                         <h2>{imgtitle}</h2>
                         <h6>{imgtag}</h6>
