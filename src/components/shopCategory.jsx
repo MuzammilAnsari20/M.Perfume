@@ -21,54 +21,52 @@ const childVariants = {
 
 function ShopCategory() {
     return (
-        <div className="second-container">
+        <div className="w-full flex justify-center items-center flex-col">
             <div className="text">
-                <motion.h6 initial={{ opacity: 0,}} whileInView={{ opacity: 1 }} viewport={{ once:false, margin:"0px 0px -100% 0px" }} transition={{ duration: 1 }}
-                    className="gsp-text" 
-                >
+                <h6 className="text-[10px]! max-md:tracking-[3px]! max-md:text-[7px]!">
                     Shop by Category
-                </motion.h6>
+                </h6>
                 <h5 className="gsp-text">Perfume Collection</h5>
             </div>
             <motion.div
-                className="collection"
+                className="mt-[30px]! w-[80%] flex justify-center items-center gap-[30px]"
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: false, amount: 0.7 }}
             >
 
-                <motion.div className="collected-item" variants={childVariants}>
-                    <div className="collected-item-img">
-                        <img src={sh1} alt="sh1" />
+                <motion.div className="w-[190px] flex items-center justify-center flex-col gap-[10px] overflow-hidden" variants={childVariants}>
+                    <div className="w-full rounded-full aspect-square overflow-hidden ">
+                        <img className="w-full h-full object-cover" src={sh1} alt="sh1" />
                     </div>
                     <h5 className="h5">Unisex</h5>
                 </motion.div>
 
-                <motion.div className="collected-item" variants={childVariants}>
-                    <div className="collected-item-img">
-                        <img src={sh2} alt="sh2" />
+                 <motion.div className="w-[190px] flex items-center justify-center flex-col gap-[10px] overflow-hidden" variants={childVariants}>
+                    <div className="w-full rounded-full aspect-square overflow-hidden ">
+                        <img className="w-full h-full object-cover" src={sh2} alt="sh2" />
                     </div>
                     <h5 className="h5">Strong Perfume</h5>
                 </motion.div>
 
-                <motion.div className="collected-item" variants={childVariants}>
-                    <div className="collected-item-img">
-                        <img src={sh3} alt="sh3" />
+                 <motion.div className="w-[190px] flex items-center justify-center flex-col gap-[10px] overflow-hidden" variants={childVariants}>
+                    <div className="w-full rounded-full aspect-square overflow-hidden ">
+                        <img className="w-full h-full object-cover" src={sh3} alt="sh3" />
                     </div>
                     <h5 className="h5">Perfume Oil</h5>
                 </motion.div>
 
-                <motion.div className="collected-item" variants={childVariants}>
-                    <div className="collected-item-img">
-                        <img src={sh4} alt="sh4" />
+                 <motion.div className="w-[190px] flex items-center justify-center flex-col gap-[10px] overflow-hidden" variants={childVariants}>
+                    <div className="w-full rounded-full aspect-square overflow-hidden ">
+                        <img className="w-full h-full object-cover" src={sh4} alt="sh4" />
                     </div>
                     <h5 className="h5">Light Perfume</h5>
                 </motion.div>
 
-                <motion.div className="collected-item" variants={childVariants}>
-                    <div className="collected-item-img">
-                        <img src={sh5} alt="sh5" />
+                 <motion.div className="w-[190px] flex items-center justify-center flex-col gap-[10px] overflow-hidden" variants={childVariants}>
+                    <div className="w-full rounded-full aspect-square overflow-hidden ">
+                        <img className="w-full h-full object-cover" src={sh5} alt="sh5" />
                     </div>
                     <h5 className="h5">Fresh Perfume</h5>
                 </motion.div>

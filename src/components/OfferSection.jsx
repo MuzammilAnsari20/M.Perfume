@@ -20,49 +20,49 @@ const childVariants = {
 
 function OfferSection() {
     return (
-        <motion.section className="features"
+        <motion.section className="flex justify-center items-center gap-[30px] max-md:gap-0 w-full px-[10px]! py-[50px]! max-md:py-[10px]!"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once:false, margin: "-5% -0px" }}
         >
-            <motion.div className="feature-box" variants={childVariants}>
+            <motion.div className=" max-md:flex-col max-md:text-center px-[10px]! py-[10px]! flex align-center" variants={childVariants}>
                 <div className="feature-img">
                     <img src={box1} alt="box1" />
                 </div>
                 <div className="feature-t">
-                    <h4>Up To 40% Offer</h4>
-                    <p>On all your perfume</p>
+                    <h4 className="text-[16px] max-md:text-[9px] max-md:text-center">Up To 40% Offer</h4>
+                    <p className="text-[12px] text-[#bbb] max-md:text-[9px]! max-md:text-center">On all your perfume</p>
                 </div>
             </motion.div>
 
-            <motion.div className="feature-box" variants={childVariants}>
+            <motion.div className=" max-md:flex-col max-md:text-center  px-[10px]! py-[10px]! flex align-center" variants={childVariants}>
                 <div className="feature-img">
                     <img src={box2} alt="box2" />
                 </div>
                 <div className="feature-t">
-                    <h4>Perfume Variety</h4>
-                    <p>Making your gift box</p>
+                    <h4 className="text-[16px] max-md:text-[9px] max-md:text-center">Perfume Variety</h4>
+                    <p className="text-[12px] text-[#bbb] max-md:text-[9px]! max-md:text-center">Making your gift box</p>
                 </div>
             </motion.div>
 
-            <motion.div className="feature-box" variants={childVariants}>
+            <motion.div className=" max-md:flex-col max-md:text-center px-[10px]! py-[10px]! flex align-center" variants={childVariants}>
                 <div className="feature-img">
                     <img src={box3} alt="box3" />
                 </div>
                 <div className="feature-t">
-                    <h4>Free Shipping</h4>
-                    <p>On order from $500+</p>
+                    <h4 className="text-[16px] max-md:text-[9px] max-md:text-center">Free Shipping</h4>
+                    <p className="text-[12px] text-[#bbb] max-md:text-[9px]! max-md:text-center">On order from $500+</p>
                 </div>
             </motion.div>
 
-            <motion.div className="feature-box" variants={childVariants}>
+            <motion.div className=" max-md:flex-col max-md:text-center px-[10px]! py-[10px]! flex align-center" variants={childVariants}>
                 <div className="feature-img">
                     <img src={box4} alt="box4" />
                 </div>
                 <div className="feature-t">
-                    <h4>Easy Return</h4>
-                    <p>Return within 15 days</p>
+                    <h4 className="text-[16px] max-md:text-[9px] max-md:text-center">Easy Return</h4>
+                    <p className="text-[12px] text-[#bbb] max-md:text-[9px]! max-md:text-center">Return within 15 days</p>
                 </div>
             </motion.div>
         </motion.section>
