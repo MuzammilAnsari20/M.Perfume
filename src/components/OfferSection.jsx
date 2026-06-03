@@ -20,7 +20,7 @@ const childVariants = {
 
 function OfferSection() {
     return (
-        <motion.section className="flex justify-center items-center gap-[30px] max-md:gap-0 w-full px-[10px]! py-[50px]! max-md:py-[10px]!"
+        <motion.section className="flex justify-center items-center gap-[30px] max-md:gap-0! w-full px-[10px]! py-[50px]! max-md:py-[10px]!"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
