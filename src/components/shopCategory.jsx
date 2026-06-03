@@ -29,7 +29,7 @@ function ShopCategory() {
                 <h5 className="gsp-text">Perfume Collection</h5>
             </div>
             <motion.div
-                className="mt-[30px]! max-md:mt-0! w-[80%] flex justify-center items-center gap-[30px] max-md:gap-[5px]"
+                className="mt-[30px]! max-md:mt-0! w-[80%] max-md:w-full max-md:px-[15px]! flex justify-center items-center gap-[30px] max-md:gap-[5px]"
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
