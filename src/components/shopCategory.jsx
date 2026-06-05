@@ -33,7 +33,7 @@ function ShopCategory() {
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.7 }}
+                viewport={{ once: false, amount: 0.2 }}
             >
 
                 <motion.div className="w-[190px] flex items-center justify-center flex-col gap-[10px] overflow-hidden" variants={childVariants}>
