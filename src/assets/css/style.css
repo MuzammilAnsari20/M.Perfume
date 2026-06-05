@@ -216,6 +216,11 @@ p {
         margin-right: -25px;
     }
 }
+@media screen and (min-width: 1400px) {
+    .doo-hi{
+        margin-right: -120px;
+    }
+}
 /* ***************Explore.jsx */
 
 .new-arrival {

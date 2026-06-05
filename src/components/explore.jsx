@@ -15,7 +15,7 @@ function Explore() {
                 transition={{ duration: 1 }}
                 // 1. group class lagayi taaki child components iske hover par react karein
                 // 2. overflow-hidden lagaya taaki picture cut se bahar na nikle
-                className="doo-hi group relative overflow-hidden w-[45%] h-[90%] flex items-end justify-end cursor-pointer max-md:w-[55%] max-md:h-full"
+                className="doo-hi group relative overflow-hidden w-[45%] h-[90%] desktop-md:w-[60%] flex items-end justify-end cursor-pointer max-md:w-[55%] max-md:h-full"
             >
                 {/* Background Image Div (Sirf ye scale hoga) */}
                 <div
@@ -24,9 +24,9 @@ function Explore() {
                 />
 
                 {/* Content Box */}
-                <div className="relative z-10 bg-[#ff93fd59] w-[40%] max-md:w-full transition-all duration-300 ease-in-out group-hover:w-full p-[20px]! max-md:p-[5px]!">
-                    <h3 className="font-bold text-white max-md:text-[14px]">Women's Perfume</h3>
-                    <h5 className="font-light text-[12px] text-white">Explore</h5>
+                <div className="relative z-10 bg-[#ff93fd59] w-[40%] desktop-md:w-[50%] max-md:w-full transition-all duration-300 ease-in-out group-hover:w-full p-[20px]! desktop-md:p-[40px]! max-md:p-[5px]!">
+                    <h5 className="font-bold text-white max-md:text-[14px] desktop-md:text-[26px]">Women's Perfume</h5>
+                    <h3 className="font-light text-[12px] text-white desktop-md:text-[24px]">Explore</h3>
                 </div>
             </motion.div>
 
@@ -37,7 +37,7 @@ function Explore() {
                 viewport={{ once: false, amount: 0.3 }}
                 transition={{ duration: 1 }}
                 // Same concept: group, relative aur overflow-hidden
-                className="group relative overflow-hidden w-[45%] h-[90%] flex items-start cursor-pointer max-md:w-[55%] max-md:h-full"
+                className="group relative overflow-hidden w-[45%] h-[90%] desktop-md:w-[60%] flex items-start cursor-pointer max-md:w-[55%] max-md:h-full"
                 style={{
                     clipPath: "polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%)",
                     zIndex: 2,
@@ -50,9 +50,9 @@ function Explore() {
                 />
 
                 {/* Content Box */}
-                <div className="relative z-10 bg-[#ff93fd59] w-[40%] max-md:w-full transition-all duration-300 ease-in-out group-hover:w-full p-[20px]! max-md:p-[5px]! flex flex-col items-end ">
-                    <h3 className="font-bold text-white max-md:text-[14px]">Men's Perfume</h3>
-                    <h5 className="font-light text-[12px] text-white">Explore</h5>
+                <div className="relative z-10 bg-[#ff93fd59] w-[40%] desktop-md:w-[50%] max-md:w-full transition-all duration-300 ease-in-out group-hover:w-full p-[20px]! desktop-md:p-[40px]! max-md:p-[5px]! flex flex-col items-end ">
+                    <h5 className="font-bold text-white max-md:text-[14px] desktop-md:text-[28px]">Men Perfume</h5>
+                    <h3 className="font-light text-[12px] text-white desktop-md:text-[24px]">Explore</h3>
                 </div>
             </motion.div>
 

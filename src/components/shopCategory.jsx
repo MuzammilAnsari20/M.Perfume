@@ -4,6 +4,7 @@ import sh2 from '../assets/img/collect-item4.png'
 import sh3 from '../assets/img/collect-item3.png'
 import sh4 from '../assets/img/collect-item1.png'
 import sh5 from '../assets/img/collect-item2.png'
+import Marquee from 'react-fast-marquee';
 
 const containerVariants = {
     hidden: {},
@@ -20,57 +21,47 @@ const childVariants = {
 };
 
 function ShopCategory() {
+    const ShopCategoryData = [
+        { src: sh1, name: 'Unisex' },
+        { src: sh2, name: 'Strong Perfume' },
+        { src: sh3, name: 'Perfume Oil' },
+        { src: sh4, name: 'Light Perfume' },
+        { src: sh5, name: 'Fresh Perfume' }
+    ]
     return (
-        <div className="w-full flex justify-center items-center flex-col">
-            <div className="text leading-10!">
-                <h6 className="text-[10px]! desktop-md:text-[18px]! max-md:tracking-[3px]! max-md:text-[7px]!">
+        <div className="w-full flex justify-center items-center flex-col desktop-md:pb-[50px]!">
+
+            <div className="text desktop-md:leading-10!">
+                <h6 className="text-[14px]! desktop-md:text-[18px]! max-md:tracking-[3px]! max-md:text-[11px]! ">
                     Shop by Category
                 </h6>
-                <h5 className="gsp-text desktop-md:text-[38px]!">Perfume Collection</h5>
+                <h5 className="text-[28px]! max-md:text-[18px]! desktop-md:text-[38px]!">Perfume Collection</h5>
             </div>
+
             <motion.div
-                className="mt-[30px]! max-md:mt-0! w-[80%] max-md:w-full max-md:px-[15px]! flex justify-center items-center gap-[30px] max-md:gap-[5px]"
                 variants={containerVariants}
                 initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.3}}
+                className='w-full flex justify-center items-center flex-wrap'
             >
+                <Marquee pauseOnHover loop={0} speed={40} className="w-[90%]! max-md:w-full! max-md:px-[15px]! mask-l-from-50% mask-r-from-50% pl-[10%]!">
+                <div className="mt-[30px]! max-md:mt-0! w-full max-md:w-[60%] max-md:px-[15px]! flex justify-center items-center gap-[50px] desktop-md:gap-[100px] max-md:gap-[5px] pr-[50px]! desktop-md:pr-[100px]!">
+                {ShopCategoryData.map((i) => (
 
-                <motion.div className="w-[190px] flex items-center justify-center flex-col gap-[10px] overflow-hidden desktop-md:w-[230px]" variants={childVariants}>
-                    <div className="w-full rounded-full aspect-square overflow-hidden ">
-                        <img className="w-full h-full object-cover" src={sh1} alt="sh1" />
-                    </div>
-                    <h5 className="desktop-md:text-[24px]">Unisex</h5>
-                </motion.div>
+                    <motion.div className="w-[190px] flex items-center justify-center flex-col gap-[10px] overflow-hidden desktop-md:w-[230px]" variants={childVariants}>
+                        
+                        <div className="w-full rounded-full aspect-square overflow-hidden ">
 
-                 <motion.div className="w-[190px] flex items-center justify-center flex-col gap-[10px] overflow-hidden" variants={childVariants}>
-                    <div className="w-full rounded-full aspect-square overflow-hidden ">
-                        <img className="w-full h-full object-cover" src={sh2} alt="sh2" />
-                    </div>
-                    <h5 className="h5">Strong Perfume</h5>
-                </motion.div>
+                            <img className="w-full h-full object-cover" src={i.src} alt="sh1" />
 
-                 <motion.div className="w-[190px] flex items-center justify-center flex-col gap-[10px] overflow-hidden" variants={childVariants}>
-                    <div className="w-full rounded-full aspect-square overflow-hidden ">
-                        <img className="w-full h-full object-cover" src={sh3} alt="sh3" />
-                    </div>
-                    <h5 className="h5">Perfume Oil</h5>
-                </motion.div>
+                        </div>
 
-                 <motion.div className="w-[190px] flex items-center justify-center flex-col gap-[10px] overflow-hidden" variants={childVariants}>
-                    <div className="w-full rounded-full aspect-square overflow-hidden ">
-                        <img className="w-full h-full object-cover" src={sh4} alt="sh4" />
-                    </div>
-                    <h5 className="h5">Light Perfume</h5>
-                </motion.div>
+                        <h5 className="desktop-md:text-[24px]">{i.name}</h5>
+                    </motion.div>
 
-                 <motion.div className="w-[190px] flex items-center justify-center flex-col gap-[10px] overflow-hidden" variants={childVariants}>
-                    <div className="w-full rounded-full aspect-square overflow-hidden ">
-                        <img className="w-full h-full object-cover" src={sh5} alt="sh5" />
-                    </div>
-                    <h5 className="h5">Fresh Perfume</h5>
-                </motion.div>
-
+                ))}
+                </div>
+                </Marquee>
             </motion.div>
         </div>
     );
