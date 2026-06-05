@@ -15,34 +15,34 @@ function Header() {
         <>
             <div className="bg-black text-[#bbb] flex justify-between  px-[100px]! max-md:px-[10px]! py-2! text-[13px] border-b border-[#222] max-md:hidden">
                 <div className="flex gap-[10px]">
-                    <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[6px]">Phone: +92 3121230283</div>
-                    <div className="max-md:text-[6px]">Email: MMuzammil2311F@aptechorangi.com</div>
+                    <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[6px] desktop-md:text-[16px]">Phone: +92 3121230283</div>
+                    <div className="max-md:text-[6px] desktop-md:text-[16px]">Email: MMuzammil2311F@aptechorangi.com</div>
                 </div>
                 <div className="flex gap-[10px]">
-                    <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[6px]">Gift Card</div>
-                    <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[6px]">Track Order</div>
-                    <div className="max-md:text-[4px]">Contact Us</div>
+                    <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[6px] desktop-md:text-[16px]">Gift Card</div>
+                    <div className="pr-[10px]! border-r border-[#c300eb] max-md:text-[6px] desktop-md:text-[16px]">Track Order</div>
+                    <div className="max-md:text-[4px] desktop-md:text-[16px]">Contact Us</div>
                 </div>
             </div>
 
             <div className="bg-black flex items-center justify-between px-[100px]! max-md:px-[20px]! relative">
-                <div className="w-[90px] max-md:w-[80px]">
+                <div className="w-[90px] max-md:w-[80px] desktop-md:w-[130px]">
                     <img className='w-full' src={main_logo} alt="" />
                 </div>
 
                 <ul className="nav-links flex list-none gap-[35px] max-md:hidden" id="navLinks">
-                    <li><NavLink to="/" className={({isActive}) => isActive ? "active" : "" }>Home</NavLink></li>
-                    <li><NavLink to="/men" className={({isActive}) => isActive ? "active" : "" }>Men</NavLink></li>
-                    <li><NavLink to="/women" className={({isActive}) => isActive ? "active" : "" }>Women</NavLink></li>
-                    <li><NavLink to="/contact-me" className={({isActive}) => isActive ? "active" : "" }>Contact</NavLink></li>
-                    <li><NavLink to="/about" className={({isActive}) => isActive ? "active" : "" }>About</NavLink></li>
+                    <li className='desktop-md:text-[24px]'><NavLink to="/" className={({isActive}) => isActive ? "active" : "" }>Home</NavLink></li>
+                    <li className='desktop-md:text-[24px]'><NavLink to="/men" className={({isActive}) => isActive ? "active" : "" }>Men</NavLink></li>
+                    <li className='desktop-md:text-[24px]'><NavLink to="/women" className={({isActive}) => isActive ? "active" : "" }>Women</NavLink></li>
+                    <li className='desktop-md:text-[24px]'><NavLink to="/contact-me" className={({isActive}) => isActive ? "active" : "" }>Contact</NavLink></li>
+                    <li className='desktop-md:text-[24px]'><NavLink to="/about" className={({isActive}) => isActive ? "active" : "" }>About</NavLink></li>
                 </ul>
 
                 <div className="nav-icons max-md:hidden">
-                    <span className="text-[#D361EB] ml-[15px]! cursor-pointer"><i className="fas fa-search"></i></span>
-                    <span className="text-[#D361EB] ml-[15px]! cursor-pointer"><i className="fas fa-heart"></i></span>
-                    <span className="text-[#D361EB] ml-[15px]! cursor-pointer"><i className="fas fa-shopping-cart"></i></span>
-                    <span className="text-[#D361EB] ml-[15px]! cursor-pointer"><i className="fas fa-user"></i></span>
+                    <span className="text-[#D361EB] ml-[15px]! cursor-pointer desktop-md:text-[24px]"><i className="fas fa-search"></i></span>
+                    <span className="text-[#D361EB] ml-[15px]! cursor-pointer desktop-md:text-[24px]"><i className="fas fa-heart"></i></span>
+                    <span className="text-[#D361EB] ml-[15px]! cursor-pointer desktop-md:text-[24px]"><i className="fas fa-shopping-cart"></i></span>
+                    <span className="text-[#D361EB] ml-[15px]! cursor-pointer desktop-md:text-[24px]"><i className="fas fa-user"></i></span>
                 </div>
 
                 <div className="hidden  max-md:flex cursor-pointer gap-[5px]" id="hamburger" onClick={toggleMenu}>

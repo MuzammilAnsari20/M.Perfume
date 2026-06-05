@@ -22,11 +22,11 @@ const childVariants = {
 function ShopCategory() {
     return (
         <div className="w-full flex justify-center items-center flex-col">
-            <div className="text">
-                <h6 className="text-[10px]! max-md:tracking-[3px]! max-md:text-[7px]!">
+            <div className="text leading-10!">
+                <h6 className="text-[10px]! desktop-md:text-[18px]! max-md:tracking-[3px]! max-md:text-[7px]!">
                     Shop by Category
                 </h6>
-                <h5 className="gsp-text">Perfume Collection</h5>
+                <h5 className="gsp-text desktop-md:text-[38px]!">Perfume Collection</h5>
             </div>
             <motion.div
                 className="mt-[30px]! max-md:mt-0! w-[80%] max-md:w-full max-md:px-[15px]! flex justify-center items-center gap-[30px] max-md:gap-[5px]"
@@ -36,11 +36,11 @@ function ShopCategory() {
                 viewport={{ once: false, amount: 0.2 }}
             >
 
-                <motion.div className="w-[190px] flex items-center justify-center flex-col gap-[10px] overflow-hidden" variants={childVariants}>
+                <motion.div className="w-[190px] flex items-center justify-center flex-col gap-[10px] overflow-hidden desktop-md:w-[230px]" variants={childVariants}>
                     <div className="w-full rounded-full aspect-square overflow-hidden ">
                         <img className="w-full h-full object-cover" src={sh1} alt="sh1" />
                     </div>
-                    <h5 className="h5">Unisex</h5>
+                    <h5 className="desktop-md:text-[24px]">Unisex</h5>
                 </motion.div>
 
                  <motion.div className="w-[190px] flex items-center justify-center flex-col gap-[10px] overflow-hidden" variants={childVariants}>
