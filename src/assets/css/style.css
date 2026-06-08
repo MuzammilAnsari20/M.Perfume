@@ -222,6 +222,20 @@ p {
     }
 }
 /* ***************Explore.jsx */
+@keyframes marquee-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+    width: max-content;
+    animation: marquee-scroll 50s linear infinite;
+    gap: 20px;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
 
 .new-arrival {
     box-sizing: border-box;

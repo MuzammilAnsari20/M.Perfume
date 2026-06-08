@@ -72,3 +72,22 @@ function App() {
 }
 
 export default App
+{/* <Marquee pauseOnHover loop={0} speed={40} className="w-[90%]! max-md:w-full! max-md:px-[15px]! mask-l-from-50% mask-r-from-50% pl-[10%]!">
+                <div className="mt-[30px]! max-md:mt-0! w-full max-md:w-[360px] max-md:px-[15px]! flex justify-center items-center gap-[50px] max-md:gap-[10px] desktop-md:gap-[100px] pr-[50px]! desktop-md:pr-[100px]!">
+                {ShopCategoryData.map((i) => (
+
+                    <motion.div className="w-[190px] flex items-center justify-center flex-col gap-[10px] overflow-hidden desktop-md:w-[230px]" variants={childVariants}>
+                        
+                        <div className="w-full max-md:w-[60px] rounded-full aspect-square overflow-hidden ">
+
+                            <img className="w-full h-full object-cover" src={i.src} alt="sh1" />
+
+                        </div>
+
+                        <h5 className="desktop-md:text-[24px]">{i.name}</h5>
+                    </motion.div>
+
+                ))}
+                </div>
+
+                </Marquee> */}
