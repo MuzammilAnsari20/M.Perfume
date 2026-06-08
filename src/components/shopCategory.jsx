@@ -72,11 +72,11 @@ function ShopCategory() {
     return (
         <div className="w-full flex justify-center items-center flex-col desktop-md:pb-[50px]!">
 
-            <div className="text desktop-md:leading-10!">
-                <h6 className="text-[14px]! desktop-md:text-[18px]! max-md:tracking-[3px]! max-md:text-[11px]!">
-                    Shop by Category
-                </h6>
-                <h5 className="text-[28px]! max-md:text-[18px]! desktop-md:text-[38px]!">Perfume Collection</h5>
+           <div className="text desktop-md:leading-10! hidden! max-md:flex! w-full flex-col items-center justify-center mb-10">
+                    <h6 className="text-[#E670FB] text-[14px]! desktop-md:text-[18px]! tracking-[5px]! max-md:text-[11px]! uppercase font-medium">
+                        Shop by Category
+                    </h6>
+                    <h5 className="text-[32px]! max-md:text-[24px]! desktop-md:text-[42px]! font-bold text-white mt-2 text-center">Perfume Collection</h5>
             </div>
 
             <div className="w-[90%] max-md:w-full mt-[20px]! overflow-hidden">

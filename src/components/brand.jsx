@@ -21,32 +21,27 @@ const childVariants = {
 
 function Brands() {
 
+    const brandsImages = 
+    [
+        {src : smile},
+        {src : organic},
+        {src : white},
+        {src : rose},
+        {src : iconic},
+    ]
+
 return(
-<motion.section className="brands" 
+<motion.section className="w-full py-[60px]! desktop-md:py-[50px]! flex items-center justify-center gap-5 desktop-md:gap-20" 
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once:false, margin: "-5% -0px" }}>
 
-        <motion.div variants={childVariants}>
-            <div className="brandimage"><img src={smile} alt="" /></div>
+    {brandsImages.map((i, index) => (
+        <motion.div key={index} variants={childVariants}>
+            <div className="w-[14vmin] desktop-md:w-[16vmin]"><img className='w-full' src={i.src} alt="" /></div>
         </motion.div>
-
-        <motion.div variants={childVariants}>
-            <div className="brandimage"><img src={organic} alt="" /></div>
-        </motion.div>
-
-        <motion.div variants={childVariants}>
-            <div className="brandimage"><img src={white} alt="" /></div>
-        </motion.div>
-
-        <motion.div variants={childVariants}>
-            <div className="brandimage"><img src={rose} alt="" /></div>
-        </motion.div>
-
-        <motion.div variants={childVariants}>
-            <div className="brandimage"><img src={iconic} alt="" /></div>
-        </motion.div>
+    ))}
 
 </motion.section>
 );
