@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion"
 import products from '../data/product';
-import arrivalbg from '../assets/img/arrivalbg.png'
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -35,7 +34,7 @@ function Arrival({ secname, sectag, imgtitle, imgtag, asideimg }) {
         .slice(0, 3);
 
     return (
-        <div className="box-border w-full py-10! overflow-hidden relative flex items-center justify-center" style={{ background: `url(${arrivalbg})`, backgroundSize: 'cover', backgroundAttachment: 'fixed' }}>
+        <div className="arrival box-border w-full py-10! overflow-hidden relative flex items-center justify-center">
             {/* Add a subtle overlay to the background for better contrast */}
             <div className="absolute inset-0 bg-black/60 pointer-events-none"></div>
 
