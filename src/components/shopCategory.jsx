@@ -72,7 +72,7 @@ function ShopCategory() {
     return (
         <div className="w-full flex justify-center items-center flex-col desktop-md:pb-[50px]!">
 
-           <div className="text desktop-md:leading-10! hidden! max-md:flex! w-full flex-col items-center justify-center mb-10">
+           <div className="text desktop-md:leading-10! flex w-full flex-col items-center justify-center mb-10">
                     <h6 className="text-[#E670FB] text-[14px]! desktop-md:text-[18px]! tracking-[5px]! max-md:text-[11px]! uppercase font-medium">
                         Shop by Category
                     </h6>

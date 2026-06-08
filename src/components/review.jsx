@@ -1,123 +1,182 @@
-import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import mine from "../assets/img/mine.png";
+import qoute from "../assets/img/float-img/qoute.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+
+const reviews = [
+    {
+        id: 1,
+        text: "I'll be very short. Smells like a mix between French Avenue Grow and JPG Paradise Garden. Or imagine Paradise Garden, but add a lot of warm spiciness to this lactonic-lavender concoction. Or Gris Charnel, but made masculine and warmer.",
+        name: "Madhuri Dexit"
+    },
+    {
+        id: 2,
+        text: "Absolutely mesmerizing! The longevity is incredible. I sprayed it in the morning and could still smell it clearly after 12 hours. The vanilla dry-down is exceptionally smooth and feels incredibly premium.",
+        name: "Sarah Jenkins"
+    },
+    {
+        id: 3,
+        text: "A true masterpiece. Smells niche, not trendy, not mass-appealing. Unisex leaning masculine. Very very strong, superb performance. Highly recommended for special occasions and evening wear.",
+        name: "James Anderson"
+    }
+];
 
 const containerVariants = {
-    hidden: {},
+    hidden: { opacity: 0 },
     visible: {
+        opacity: 1,
         transition: {
-            staggerChildren: 1// ek ke baad ek
+            staggerChildren: 0.5, // 0.5s delay between children
+            delayChildren: 0.2 // initial delay
         }
     }
 };
 
-const childVariants = {
-    hidden: { opacity: 0, x: 100 },
-    visible: { opacity: 1, x: 0, transition: { duration: 1 } }
+const slideLeft = { // This is for the image
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        transition: {
+            type: "spring",
+            stiffness: 80,
+            damping: 15,
+            duration: 1
+        }
+    }
+};
+
+const slideRight = { // This is for the text coming from behind
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            type: "tween",
+            ease: "easeOut",
+            duration: 2 // slow duration
+        }
+    }
+};
+
+const quoteAnim = {
+    y: ["-10px", "10px"],
+    rotate: [-5, 5],
+    transition: {
+        duration: 3,
+        repeat: Infinity,
+        repeatType: "reverse",
+        ease: "easeInOut"
+    }
 };
 
 function Review() {
+    const [current, setCurrent] = useState(0);
+
+    const nextSlide = () => {
+        setCurrent((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
+    };
+
+    const prevSlide = () => {
+        setCurrent((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
+    };
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrent((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
+        }, 5000);
+        return () => clearInterval(timer);
+    }, []);
+
     return (
-        <section className="review">
-            <div className="text">
-                <h6 className="gsp-text">Testimonials</h6>
-                <h5 className="gsp-text">Customer Reviews</h5>
+        <div className="w-full py-[10px]! box-border overflow-hidden">
+            <div className="text desktop-md:leading-10! w-full mb-10 flex flex-col items-center">
+                <motion.h6
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-[#E670FB] text-[14px]! desktop-md:text-[18px]! tracking-[5px]! max-md:text-[11px]! uppercase font-medium"
+                >
+                    Testimonials
+                </motion.h6>
             </div>
-            <br />
-            <br />
-            <motion.div className="review-content" variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once:false, margin: "-5% -0px" }}>
 
-                <motion.div className="review_slide" variants={childVariants}>
+            <div className="w-full h-[80vh] flex max-md:flex-col justify-center items-center gap-10">
 
-                    <div className="perfume-type">
-                        <div className="icons">
-                            <ul>
-                                <li><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                            </ul>
-                        </div>
-                        <h2>Impressive Collection</h2>
-                        <p>
-                            I recently purchased a perfume from M, and I am absolutely
-                            thrilled with my experience. The fragrance I chose is exquisite,
-                            and it has quickly become my signature scent. The quality of the
-                            perfume
-                        </p>
+                {/* LEFT SIDE: IMAGE AND SLIDE BEHIND TEXT */}
+                <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: false }} className="w-[40%] max-md:w-[90%] h-[70%] max-md:h-auto flex max-md:flex-col relative">
+                    <motion.div
+                        className="w-[40%] max-md:w-full flex items-center justify-center h-full max-md:h-[200px] relative z-20"
+                        variants={slideLeft}
+                    >
+                        <img className="h-full object-contain drop-shadow-2xl" src={mine} alt="" />
+                    </motion.div>
+
+                    <motion.div
+                        className="w-[60%] max-md:w-full h-full max-md:mt-5 flex flex-col justify-center text-white relative z-10 pl-5"
+                        variants={slideRight}
+                    >
+                        <h6 className="font-bold text-[30px] max-md:text-[24px]">Voices of Elegance</h6>
                         <br />
-                    </div>
-
-                    <div className="reviewer_name">
-                        <h4>Emily R.</h4>
-                    </div>
-
+                        <p className="font-light text-[12px]! max-md:text-[14px]! text-gray-300">
+                            Discover authentic stories from M.Perfume devotees who've experienced the transformative power of our fragrances. 
+                            Each testimonial reflects a genuine connection—where quality, performance, and artistry meet to create unforgettable olfactory moments. 
+                            These are the voices of those who understand that true fragrance isn't just about smelling good; it's about feeling exceptional.
+                        </p>
+                    </motion.div>
                 </motion.div>
 
-                <motion.div className="review_slide" variants={childVariants}>
+                {/* DIVIDER */}
+                <div className="w-[0.1%] max-md:w-[80%] h-[70%] max-md:h-[1px] bg-gradient-to-b max-md:bg-gradient-to-r from-transparent via-[#b300ff] to-transparent"></div>
 
-                    <div className="perfume-type">
-                        <div className="icons">
-                            <ul>
-                                <li><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                            </ul>
+                {/* RIGHT SIDE: SLIDER AND QUOTE */}
+                <div className="w-[50%] max-md:w-[90%] h-[70%] max-md:h-[300px] flex flex-col justify-center items-center relative text-white">
+
+                    {/* Testimonial Slider div */}
+                    <div className="w-[90%] py-[10px]! relative h-[250px] flex flex-col gap-10">
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={current}
+                                initial={{ opacity: 0, x: 50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: -50 }}
+                                transition={{ duration: 0.5, type: "spring" }}
+                                className="w-full"
+                            >
+                                <h4 className='font-light italic text-[16px] max-md:text-[14px] text-gray-200 leading-relaxed'>
+                                    "{reviews[current].text}"
+                                </h4>
+                                <br />
+                                <p className="font-bold text-[#E670FB] italic text-[18px]">
+                                    - {reviews[current].name}
+                                </p>
+                            </motion.div>
+                        </AnimatePresence>
+                    </div>
+
+                    {/* Animated Quote Image */}
+                    <div className="w-[90%] max-md:w-[90%] flex justify-between max-md:justify-center mt-5">
+                        <div className='w-full flex items-center gap-5 mt-4'>
+                            <button onClick={prevSlide} className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-[#E670FB] hover:border-[#E670FB] transition-all cursor-pointer text-white">
+                                <FontAwesomeIcon icon={faArrowLeft} />
+                            </button>
+                            <button onClick={nextSlide} className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-[#E670FB] hover:border-[#E670FB] transition-all cursor-pointer text-white">
+                                <FontAwesomeIcon icon={faArrowRight} />
+                            </button>
                         </div>
-                        <h2>Impressive Collection</h2>
-                        <p>
-                            I recently purchased a perfume from M, and I am absolutely
-                            thrilled with my experience. The fragrance I chose is exquisite,
-                            and it has quickly become my signature scent. The quality of the
-                            perfume
-                        </p>
-                        <br />
+                        <motion.img
+                            className="w-[20%] max-md:w-[30%] opacity-70"
+                            src={qoute}
+                            alt="Quote"
+                            animate={{ y: ["-10px", "10px"], rotate: [-5, 5] }}
+                            transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+                        />
                     </div>
-
-                    <div className="reviewer_name">
-                        <h4>Emily R.</h4>
-                    </div>
-
-                </motion.div>
-
-                <motion.div className="review_slide" variants={childVariants}>
-
-                    <div className="perfume-type">
-                        <div className="icons">
-                            <ul>
-                                <li><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                                <li><i className="fas fa-star"></i></li>
-                            </ul>
-                        </div>
-                        <h2>Impressive Collection</h2>
-                        <p>
-                            I recently purchased a perfume from M, and I am absolutely
-                            thrilled with my experience. The fragrance I chose is exquisite,
-                            and it has quickly become my signature scent. The quality of the
-                            perfume
-                            I recently purchased a perfume from M, and I am absolutely
-                            thrilled with my experience. The fragrance I chose is exquisite,
-                            and it has quickly become my signature scent. The quality of the
-                            perfume
-                        </p>
-                        <br />
-                    </div>
-
-                    <div className="reviewer_name">
-                        <h4>Emily R.</h4>
-                    </div>
-
-                </motion.div>
-
-            </motion.div>
-        </section>
+                </div>
+            </div>
+        </div>
     );
 }
 
