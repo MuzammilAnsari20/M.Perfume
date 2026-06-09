@@ -24,9 +24,9 @@ function Explore() {
                 />
 
                 {/* Content Box */}
-                <div className="relative z-10 bg-[#ff93fd59] w-[40%] desktop-md:w-[50%] max-md:w-full transition-all duration-300 ease-in-out group-hover:w-full p-[20px]! desktop-md:p-[40px]! max-md:p-[5px]!">
-                    <h5 className="font-bold text-white max-md:text-[14px] desktop-md:text-[26px]">Women's Perfume</h5>
-                    <h3 className="font-light text-[12px] text-white desktop-md:text-[24px]">Explore</h3>
+                <div className="relative z-10 bg-[#ff93fd59] w-[40%] desktop-md:w-[50%] monitor-md:w-[50%] max-md:w-full transition-all duration-300 ease-in-out group-hover:w-full p-[20px]! desktop-md:p-[40px]! monitor-md:p-[50px]! max-md:p-[5px]!">
+                    <h5 className="font-bold text-white max-md:text-[14px] desktop-md:text-[26px] monitor-md:text-6xl">Women's Perfume</h5>
+                    <h3 className="font-light text-[12px] text-white desktop-md:text-[24px] monitor-md:text-5xl">Explore</h3>
                 </div>
             </motion.div>
 
@@ -50,9 +50,9 @@ function Explore() {
                 />
 
                 {/* Content Box */}
-                <div className="relative z-10 bg-[#ff93fd59] w-[40%] desktop-md:w-[50%] max-md:w-full transition-all duration-300 ease-in-out group-hover:w-full p-[20px]! desktop-md:p-[40px]! max-md:p-[5px]! flex flex-col items-end ">
-                    <h5 className="font-bold text-white max-md:text-[14px] desktop-md:text-[28px]">Men Perfume</h5>
-                    <h3 className="font-light text-[12px] text-white desktop-md:text-[24px]">Explore</h3>
+                <div className="relative z-10 bg-[#ff93fd59] w-[40%] desktop-md:w-[50%] monitor-md:w-[50%] max-md:w-full transition-all duration-300 ease-in-out group-hover:w-full p-[20px]! desktop-md:p-[40px]! monitor-md:p-[50px]! max-md:p-[5px]! flex flex-col items-end ">
+                    <h5 className="font-bold text-white max-md:text-[14px] desktop-md:text-[28px] monitor-md:text-6xl">Men Perfume</h5>
+                    <h3 className="font-light text-[12px] text-white desktop-md:text-[24px] monitor-md:text-5xl">Explore</h3>
                 </div>
             </motion.div>
 

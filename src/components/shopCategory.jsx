@@ -4,6 +4,7 @@ import sh2 from '../assets/img/collect-item4.png'
 import sh3 from '../assets/img/collect-item3.png'
 import sh4 from '../assets/img/collect-item1.png'
 import sh5 from '../assets/img/collect-item2.png'
+import { Title } from './sectionTitle';
 
 function ShopCategory() {
     const sliderRef = useRef(null);
@@ -72,17 +73,12 @@ function ShopCategory() {
     return (
         <div className="w-full flex justify-center items-center flex-col desktop-md:pb-[50px]!">
 
-           <div className="text desktop-md:leading-10! flex w-full flex-col items-center justify-center mb-10">
-                    <h6 className="text-[#E670FB] text-[14px]! desktop-md:text-[18px]! tracking-[5px]! max-md:text-[11px]! uppercase font-medium">
-                        Shop by Category
-                    </h6>
-                    <h5 className="text-[32px]! max-md:text-[24px]! desktop-md:text-[42px]! font-bold text-white mt-2 text-center">Perfume Collection</h5>
-            </div>
+            <Title subtitle="Shop by Category" title="Perfume Collection" />
 
-            <div className="w-[90%] max-md:w-full mt-[20px]! overflow-hidden">
+            <div className="w-[90%] max-md:w-full mt-[20px]! monitor-md:mt-[100px]! overflow-hidden">
                 <div 
                     ref={sliderRef}
-                    className={`flex overflow-x-auto no-scrollbar desktop-md:gap-20  gap-5 ${isDown ? 'cursor-grabbing' : 'cursor-grab'}`}
+                    className={`flex overflow-x-auto no-scrollbar desktop-md:gap-20 monitor-md:gap-40  gap-5 ${isDown ? 'cursor-grabbing' : 'cursor-grab'}`}
                     onMouseDown={handleMouseDown}
                     onMouseLeave={handleMouseLeave}
                     onMouseUp={handleMouseUp}
@@ -95,12 +91,12 @@ function ShopCategory() {
                     {marqueeItems.map((i, index) => (
                         <div
                             key={index}
-                            className="shrink-0 w-[190px] max-md:w-[90px] desktop-md:w-[230px] flex items-center justify-center flex-col gap-[10px] px-[40px] max-md:px-[20px] mx-[10px] select-none"
+                            className="shrink-0 w-[190px] max-md:w-[90px] desktop-md:w-[230px] monitor-md:w-[370px] flex items-center justify-center flex-col gap-[10px] monitor-md:gap-10 px-[40px] max-md:px-[20px] mx-[10px] select-none"
                         >
                             <div className="w-full rounded-full aspect-square overflow-hidden pointer-events-none">
                                 <img className="w-full h-full object-cover pointer-events-none" src={i.src} alt={i.name} draggable="false" />
                             </div>
-                            <h5 className="desktop-md:text-[24px] max-md:text-[12px] whitespace-nowrap pointer-events-none">{i.name}</h5>
+                            <h5 className="desktop-md:text-[24px] monitor-md:text-4xl max-md:text-[12px] whitespace-nowrap pointer-events-none">{i.name}</h5>
                         </div>
                     ))}
                 </div>

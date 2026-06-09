@@ -31,7 +31,7 @@ function Brands() {
     ]
 
 return(
-<motion.section className="w-full py-[60px]! desktop-md:py-[50px]! flex items-center justify-center gap-5 desktop-md:gap-20" 
+<motion.section className="w-full py-[60px]! monitor-md:py-[80px]! desktop-md:py-[50px]! flex items-center justify-center monitor-md:justify-evenly gap-5  desktop-md:gap-20" 
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"

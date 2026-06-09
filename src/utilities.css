@@ -1,3 +1,4 @@
 @import "tailwindcss";
 
-@custom-variant desktop-md (@media screen and (min-width: 1400px) and (max-width: 1920px));
+@custom-variant desktop-md (@media screen and (min-width: 1400px) and (max-width: 2560px));
+@custom-variant monitor-md (@media screen and (min-width: 2160px) and (max-width: 3840px));
