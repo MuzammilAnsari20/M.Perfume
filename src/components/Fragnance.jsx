@@ -158,7 +158,7 @@ function Fragnance() {
                     </motion.div>
                 </motion.div>
 
-                <motion.div className="w-[45%] max-md:w-full  max-md:mt-[40px]! max-md:mb-[60px]! relative h-[64vh]! desktop-md:h-[60vh]! max-md:flex max-md:flex-col max-md:items-center max-md:justify-center"
+                <motion.div className="w-[45%] max-md:w-full  max-md:mt-[40px]! max-md:mb-0! relative h-[64vh]! desktop-md:h-[60vh]! max-md:flex max-md:flex-col max-md:items-center max-md:justify-center"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: false, margin: "-10% 0px" }}

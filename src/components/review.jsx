@@ -93,7 +93,7 @@ function Review() {
 
     return (
         <div className="w-full py-[10px]! box-border overflow-hidden">
-            <div className="text desktop-md:leading-10! w-full mb-10 flex flex-col items-center">
+            <div className="text desktop-md:leading-10! w-full flex flex-col items-center">
                 <Title title="Testimonials" />
             </div>
 
@@ -130,7 +130,7 @@ function Review() {
                 <div className="w-[50%] max-md:w-[90%] h-[70%] max-md:h-[300px] flex flex-col justify-center items-center relative text-white">
 
                     {/* Testimonial Slider div */}
-                    <div className="w-[90%] py-[10px]! relative h-[250px] flex flex-col gap-10">
+                    <div className="w-[90%] py-[10px]! max-md:py-0! relative h-[250px] flex flex-col gap-10">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={current}
@@ -152,8 +152,8 @@ function Review() {
                     </div>
 
                     {/* Animated Quote Image */}
-                    <div className="w-[90%] max-md:w-[90%] flex justify-between mt-5 max-md:mt-0">
-                        <div className='w-full flex items-center max-md:items-start gap-5 mt-4'>
+                    <div className="w-[90%] max-md:w-[90%] flex max-md:flex-col justify-between max-md:items-end mt-5 max-md:mt-0">
+                        <div className='w-full flex items-center max-md:justify-center gap-5 mt-4'>
                             <button onClick={prevSlide} className="w-10 h-10 max-md:w-6 max-md:h-6 max-md:text-[10px] desktop-md:w-15 desktop-md:h-15 monitor-md:w-25 monitor-md:h-25 monitor-md:text-[30px] rounded-full border border-white/30 flex items-center justify-center hover:bg-[#E670FB] hover:border-[#E670FB] transition-all cursor-pointer text-white">
                                 <FontAwesomeIcon icon={faArrowLeft} />
                             </button>
