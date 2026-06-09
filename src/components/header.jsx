@@ -26,7 +26,7 @@ function Header() {
             </div>
 
             <div className="bg-black flex items-center justify-between px-[100px]! max-md:px-[20px]! relative">
-                <div className="w-[7vw]">
+                <div className="w-[7vw] max-md:w-[20%]">
                     <img className='w-full' src={main_logo} alt="" />
                 </div>
 

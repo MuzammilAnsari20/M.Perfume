@@ -23,7 +23,7 @@ function HeroBanner() {
     return (
         <>
             <section
-                className="h-[70vh] max-md:h-[50vh] w-full box-border flex max-md:flex-col-reverse relative items-center justify-between max-md:justify-center bg-center bg-cover max-md:py-5! max-md:gap-5"
+                className="h-[70vh] max-md:h-[48vh] w-full box-border flex max-md:flex-col-reverse relative items-center justify-between max-md:justify-center bg-center bg-cover max-md:py-5! max-md:gap-2"
                 style={{ backgroundImage: `url(${header_bg})` }}
             >
 

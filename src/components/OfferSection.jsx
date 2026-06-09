@@ -35,8 +35,8 @@ function OfferSection() {
         >
 
         {items.map((i, idx) => (
-            <motion.div key={idx} className=" max-md:flex-col max-md:text-center px-[10px]!  max-md:px-[2px]! py-[10px]! flex align-center desktop-md:w-[20%] monitor-md:w-[20%] desktop-md:gap-[14px]" variants={childVariants}>
-                <div className="align-center flex justify-center desktop-md:w-[25%] monitor-md:w-[20%] desktop-md:aspect-square">
+            <motion.div key={idx} className=" max-md:flex-col max-md:text-center px-[10px]!  max-md:px-[2px]! py-[10px]! flex items-center desktop-md:w-[20%] monitor-md:w-[20%] desktop-md:gap-[14px]" variants={childVariants}>
+                <div className="desktop-md:w-[25%] monitor-md:w-[20%] max-md:w-[70%] desktop-md:aspect-square">
                     <img src={i.src} className='w-full' alt={i.src} />
                 </div>
                 <div className="flex align-center justify-center flex-col">
