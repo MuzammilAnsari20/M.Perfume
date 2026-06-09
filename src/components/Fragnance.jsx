@@ -178,7 +178,7 @@ function Fragnance() {
 
                     {/* small perfume flying in like crazy */}
                     <motion.div 
-                        className="absolute max-md:relative left-[-20px]! max-md:left-0! bottom-[40px]! max-md:bottom-0! w-[50%] max-md:w-[60%] h-[55%] max-md:h-[40%]! z-20 drop-shadow-[0_30px_30px_rgba(0,0,0,0.8)]"
+                        className="absolute max-md:relative left-[-20px]! max-md:left-0! bottom-[40px]! max-md:bottom-[70px]! w-[50%] max-md:w-[60%] h-[55%] max-md:h-[40%]! z-20 drop-shadow-[0_30px_30px_rgba(0,0,0,0.8)]"
                         variants={flyingPerfume}
                     >
                         <motion.div
