@@ -97,7 +97,7 @@ function Review() {
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="text-[#E670FB] text-[14px]! desktop-md:text-[18px]! tracking-[5px]! max-md:text-[11px]! uppercase font-medium"
+                    className="text-[#E670FB] text-[14px]! desktop-md:text-[18px]! tracking-[5px]! max-md:text-[11px]! uppercase font-extrabold"
                 >
                     Testimonials
                 </motion.h6>
@@ -118,9 +118,9 @@ function Review() {
                         className="w-[60%] max-md:w-full h-full max-md:mt-5 flex flex-col justify-center text-white relative z-10 pl-5"
                         variants={slideRight}
                     >
-                        <h6 className="font-bold text-[30px] max-md:text-[24px]">Voices of Elegance</h6>
+                        <h6 className="font-bold text-[30px] max-md:text-[24px] desktop-md:text-[42px]">Voices of Elegance</h6>
                         <br />
-                        <p className="font-light text-[12px]! max-md:text-[14px]! text-gray-300">
+                        <p className="font-light text-[12px]! max-md:text-[14px]! desktop-md:text-[22px]! text-gray-300">
                             Discover authentic stories from M.Perfume devotees who've experienced the transformative power of our fragrances. 
                             Each testimonial reflects a genuine connection—where quality, performance, and artistry meet to create unforgettable olfactory moments. 
                             These are the voices of those who understand that true fragrance isn't just about smelling good; it's about feeling exceptional.
@@ -145,11 +145,11 @@ function Review() {
                                 transition={{ duration: 0.5, type: "spring" }}
                                 className="w-full"
                             >
-                                <h4 className='font-light italic text-[16px] max-md:text-[14px] text-gray-200 leading-relaxed'>
+                                <h4 className='font-light italic text-[16px] max-md:text-[14px] desktop-md:text-2xl text-gray-200 leading-relaxed'>
                                     "{reviews[current].text}"
                                 </h4>
                                 <br />
-                                <p className="font-bold text-[#E670FB] italic text-[18px]">
+                                <p className="font-bold text-[#E670FB] italic text-[18px] desktop-md:text-[26px]!">
                                     - {reviews[current].name}
                                 </p>
                             </motion.div>
@@ -159,10 +159,10 @@ function Review() {
                     {/* Animated Quote Image */}
                     <div className="w-[90%] max-md:w-[90%] flex justify-between max-md:justify-center mt-5">
                         <div className='w-full flex items-center gap-5 mt-4'>
-                            <button onClick={prevSlide} className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-[#E670FB] hover:border-[#E670FB] transition-all cursor-pointer text-white">
+                            <button onClick={prevSlide} className="w-10 h-10 desktop-md:w-15 desktop-md:h-15 rounded-full border border-white/30 flex items-center justify-center hover:bg-[#E670FB] hover:border-[#E670FB] transition-all cursor-pointer text-white">
                                 <FontAwesomeIcon icon={faArrowLeft} />
                             </button>
-                            <button onClick={nextSlide} className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-[#E670FB] hover:border-[#E670FB] transition-all cursor-pointer text-white">
+                            <button onClick={nextSlide} className="w-10 h-10 desktop-md:w-15 desktop-md:h-15 rounded-full border border-white/30 flex items-center justify-center hover:bg-[#E670FB] hover:border-[#E670FB] transition-all cursor-pointer text-white">
                                 <FontAwesomeIcon icon={faArrowRight} />
                             </button>
                         </div>
