@@ -23,14 +23,14 @@ function HeroBanner() {
     return (
         <>
             <section
-                className="h-[70vh] max-md:h-[45vh] w-full box-border flex max-md:flex-col-reverse relative items-center justify-between max-md:justify-center bg-center bg-cover max-md:py-5!"
+                className="h-[70vh] max-md:h-[50vh] w-full box-border flex max-md:flex-col-reverse relative items-center justify-between max-md:justify-center bg-center bg-cover max-md:py-5! max-md:gap-5"
                 style={{ backgroundImage: `url(${header_bg})` }}
             >
 
                 {/* Text */}
                 <div className="w-1/2 max-md:w-full flex items-center justify-center">
                     <motion.div
-                        className="max-w-[1050px] px-5"
+                        className="max-w-[1050px] max-md:flex max-md:flex-col max-md:items-center px-5"
                         variants={containerVariants}
                         initial="hidden"
                         whileInView="visible"
@@ -42,7 +42,7 @@ function HeroBanner() {
 
                         <motion.h1 variants={childVariants} className="text-white text-lg max-md:text-[14px]! desktop-md:text-[34px] monitor-md:text-[60px] Poppins">Where Passion meet <span className="text-[#D361EB]">Elegance</span></motion.h1>
 
-                        <motion.h6 variants={childVariants} className="text-white text-[12px] max-md:text-[12px]! desktop-md:text-[26px] monitor-md:text-[46px] Poppins">The Scent of Unforgettable <br /> Moments.</motion.h6>
+                        <motion.h6 variants={childVariants} className="text-white text-[12px] max-md:text-[12px]! desktop-md:text-[26px] monitor-md:text-[46px] Poppins">The Scent of Unforgettable Moments.</motion.h6>
                     </motion.div>
                 </div>
 

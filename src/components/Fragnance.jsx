@@ -56,7 +56,7 @@ const imageReveal = {
     visible: { 
         clipPath: "inset(0% 0 0 0)", 
         scale: 1,
-        transition: { duration: 1.5, ease: [0.77, 0, 0.175, 1], delay: 0.5 } 
+        transition: { duration: 1.7, ease: [0.77, 0, 0.175, 1], delay: 0.2 } 
     }
 };
 
@@ -137,7 +137,7 @@ function Fragnance() {
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E670FB] to-[#d3b195]">Passion & Precision</span>
                     </motion.h2>
 
-                    <motion.p className="text-[14px]! desktop-md:text-[18px]! monitor-md:text-[40px]! text-[#cfcfcf] leading-[1.8]! mb-[15px]! max-w-[50%]" variants={itemUp}>
+                    <motion.p className="text-[14px]! desktop-md:text-[18px]! monitor-md:text-[40px]! text-[#cfcfcf] leading-[1.8]! mb-[15px]! max-md:w-full" variants={itemUp}>
                         At M, we believe that every fragrance tells a story. Our journey began
                         with a passion for creating unique and memorable scents that capture
                         the essence of life’s special moments.
@@ -171,7 +171,7 @@ function Fragnance() {
                         <motion.div 
                             className="w-full h-full bg-cover"
                             style={{ backgroundImage: `url(${m6Img})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
-                            whileHover={{ scale: 1.08, rotate: 2 }}
+                            whileHover={{ scale: 1.08, rotate: 1 }}
                             transition={{ duration: 0.5 }}
                         ></motion.div>
                     </motion.div>
@@ -182,10 +182,11 @@ function Fragnance() {
                         variants={flyingPerfume}
                     >
                         <motion.div
-                            className="w-full h-full bg-center bg-cover rounded-3xl! border-2 border-[#E670FB]/30 shadow-[0_0_30px_rgba(230,112,251,0.2)]"
+                            className="w-full h-full overflow-hidden bg-center bg-cover rounded-3xl! border-2 border-[#E670FB]/30 shadow-[0_0_30px_rgba(230,112,251,0.2)]"
                             style={{ backgroundImage: `url(${fragImg})`, backgroundRepeat: 'no-repeat' }}
                             animate={floatContinously}
-                            whileHover={{ scale: 1.15, rotate: -10, y: -20 }}
+                            whileHover={{ scale: 1.08 }}
+                            transition={{ duration: 0.5 }}
                         ></motion.div>
                     </motion.div>
                 </motion.div>

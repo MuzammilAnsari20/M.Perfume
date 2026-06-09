@@ -94,13 +94,13 @@ function Review() {
     return (
         <div className="w-full py-[10px]! box-border overflow-hidden">
             <div className="text desktop-md:leading-10! w-full mb-10 flex flex-col items-center">
-                <Title subtitle="Testimonials" />
+                <Title title="Testimonials" />
             </div>
 
-            <div className="w-full h-[80vh] monitor-md:h-[70vh] flex max-md:flex-col justify-center items-center gap-10">
+            <div className="w-full h-[80vh] monitor-md:h-[70vh] flex max-md:flex-col justify-center items-center gap-10 max-md:gap-3">
 
                 {/* LEFT SIDE: IMAGE AND SLIDE BEHIND TEXT */}
-                <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: false }} className="w-[40%] max-md:w-[90%] h-[70%] monitor-md:h-full max-md:h-auto flex max-md:flex-col relative">
+                <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: false }} className="w-[40%] max-md:w-[90%] h-[70%] monitor-md:h-full max-md:h-auto flex relative">
                     <motion.div
                         className="w-[40%] max-md:w-full flex items-center justify-center h-full max-md:h-[200px] relative z-20"
                         variants={slideLeft}
@@ -114,7 +114,7 @@ function Review() {
                     >
                         <h6 className="font-bold text-[30px] monitor-md:text-[70px] max-md:text-[24px] desktop-md:text-[42px]">Voices of Elegance</h6>
                         <br />
-                        <p className="font-light text-[12px]! monitor-md:text-[30px]! max-md:text-[14px]! desktop-md:text-[22px]! text-gray-300">
+                        <p className="font-light max-md:hidden text-[12px]! monitor-md:text-[30px]! max-md:text-[14px]! desktop-md:text-[22px]! text-gray-300">
                             Discover authentic stories from M.Perfume devotees who've experienced the transformative power of our fragrances. 
                             Each testimonial reflects a genuine connection—where quality, performance, and artistry meet to create unforgettable olfactory moments. 
                             These are the voices of those who understand that true fragrance isn't just about smelling good; it's about feeling exceptional.
@@ -139,11 +139,11 @@ function Review() {
                                 transition={{ duration: 0.5, type: "spring" }}
                                 className="w-full"
                             >
-                                <h4 className='font-light italic text-[16px] max-md:text-[14px] monitor-md:text-[40px] desktop-md:text-2xl text-gray-200 leading-relaxed'>
+                                <h4 className='font-light italic max-md:text-center text-[16px] max-md:text-[14px] monitor-md:text-[40px] desktop-md:text-2xl text-gray-200 leading-relaxed'>
                                     "{reviews[current].text}"
                                 </h4>
                                 <br />
-                                <p className="font-bold text-[#E670FB] italic text-[18px] desktop-md:text-[26px]! monitor-md:text-[30px]!">
+                                <p className="font-bold text-[#E670FB] max-md:text-center italic text-[18px] desktop-md:text-[26px]! monitor-md:text-[30px]!">
                                     - {reviews[current].name}
                                 </p>
                             </motion.div>
@@ -151,17 +151,17 @@ function Review() {
                     </div>
 
                     {/* Animated Quote Image */}
-                    <div className="w-[90%] max-md:w-[90%] flex justify-between max-md:justify-center mt-5">
-                        <div className='w-full flex items-center gap-5 mt-4'>
-                            <button onClick={prevSlide} className="w-10 h-10 desktop-md:w-15 desktop-md:h-15 monitor-md:w-25 monitor-md:h-25 monitor-md:text-[30px] rounded-full border border-white/30 flex items-center justify-center hover:bg-[#E670FB] hover:border-[#E670FB] transition-all cursor-pointer text-white">
+                    <div className="w-[90%] max-md:w-[90%] flex justify-between mt-5 max-md:mt-0">
+                        <div className='w-full flex items-center max-md:items-start gap-5 mt-4'>
+                            <button onClick={prevSlide} className="w-10 h-10 max-md:w-6 max-md:h-6 max-md:text-[10px] desktop-md:w-15 desktop-md:h-15 monitor-md:w-25 monitor-md:h-25 monitor-md:text-[30px] rounded-full border border-white/30 flex items-center justify-center hover:bg-[#E670FB] hover:border-[#E670FB] transition-all cursor-pointer text-white">
                                 <FontAwesomeIcon icon={faArrowLeft} />
                             </button>
-                            <button onClick={nextSlide} className="w-10 h-10 desktop-md:w-15 desktop-md:h-15 monitor-md:w-25 monitor-md:h-25 monitor-md:text-[30px] rounded-full border border-white/30 flex items-center justify-center hover:bg-[#E670FB] hover:border-[#E670FB] transition-all cursor-pointer text-white">
+                            <button onClick={nextSlide} className="w-10 h-10 max-md:w-6 max-md:h-6 max-md:text-[10px] desktop-md:w-15 desktop-md:h-15 monitor-md:w-25 monitor-md:h-25 monitor-md:text-[30px] rounded-full border border-white/30 flex items-center justify-center hover:bg-[#E670FB] hover:border-[#E670FB] transition-all cursor-pointer text-white">
                                 <FontAwesomeIcon icon={faArrowRight} />
                             </button>
                         </div>
                         <motion.img
-                            className="w-[20%] max-md:w-[30%] opacity-70"
+                            className="w-[20%] max-md:w-[30%]  opacity-70"
                             src={qoute}
                             alt="Quote"
                             animate={{ y: ["-10px", "10px"], rotate: [-5, 5] }}
