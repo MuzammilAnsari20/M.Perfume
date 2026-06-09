@@ -45,9 +45,9 @@ function Header() {
                     <span className="text-[#D361EB] ml-[15px]! cursor-pointer desktop-md:text-[24px] monitor-md:text-[44px]"><i className="fas fa-user"></i></span>
                 </div>
 
-                <div className="hidden  max-md:flex cursor-pointer gap-[5px]" id="hamburger" onClick={toggleMenu}>
-                    <span className='text-[18px]! text-[#ffffff]'><FontAwesomeIcon icon={faBars} /></span>
-                    <span className='text-[18px]! text-[#ffffff]'><FontAwesomeIcon icon={faCartShopping} /></span>
+                <div className="hidden  max-md:flex cursor-pointer gap-4" id="hamburger" onClick={toggleMenu}>
+                    <span className='text-[21px]! text-[#ffffff]'><FontAwesomeIcon icon={faBars} /></span>
+                    <span className='text-[21px]! text-[#ffffff]'><FontAwesomeIcon icon={faCartShopping} /></span>
                 </div>
             </div>
             <div id="hellos" className={isActive ? "active" : ""}>

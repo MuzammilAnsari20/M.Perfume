@@ -97,12 +97,12 @@ function Review() {
                 <Title title="Testimonials" />
             </div>
 
-            <div className="w-full h-[80vh] monitor-md:h-[70vh] flex max-md:flex-col justify-center items-center gap-10 max-md:gap-3">
+            <div className="w-full h-[80vh] monitor-md:h-[70vh] flex max-md:flex-col-reverse justify-center items-center gap-10 max-md:gap-3">
 
                 {/* LEFT SIDE: IMAGE AND SLIDE BEHIND TEXT */}
                 <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: false }} className="w-[40%] max-md:w-[90%] h-[70%] monitor-md:h-full max-md:h-auto flex relative">
                     <motion.div
-                        className="w-[40%] max-md:w-full flex items-center justify-center h-full max-md:h-[200px] relative z-20"
+                        className="w-[40%] max-md:w-[30%] flex items-center justify-center h-full max-md:h-[220px] relative z-20"
                         variants={slideLeft}
                     >
                         <img className="h-full object-contain drop-shadow-2xl" src={mine} alt="" />
@@ -112,7 +112,8 @@ function Review() {
                         className="w-[60%] max-md:w-full h-full max-md:mt-5 flex flex-col justify-center text-white relative z-10 pl-5"
                         variants={slideRight}
                     >
-                        <h6 className="font-bold text-[30px] monitor-md:text-[70px] max-md:text-[24px] desktop-md:text-[42px]">Voices of Elegance</h6>
+                        <h6 className="font-bold text-[30px] monitor-md:text-[70px] max-md:text-[24px] desktop-md:text-[42px] max-md:hidden">Voices of Elegance</h6>
+                        <h6 className="font-bold text-[30px] monitor-md:text-[70px] max-md:text-[24px] desktop-md:text-[42px] hidden max-md:block"><span className='text-[#ba00ba]'>M.Perfume</span>, Memories in Every Drop</h6>
                         <br />
                         <p className="font-light max-md:hidden text-[12px]! monitor-md:text-[30px]! max-md:text-[14px]! desktop-md:text-[22px]! text-gray-300">
                             Discover authentic stories from M.Perfume devotees who've experienced the transformative power of our fragrances. 
@@ -123,7 +124,7 @@ function Review() {
                 </motion.div>
 
                 {/* DIVIDER */}
-                <div className="w-[0.1%] max-md:w-[80%] h-[70%] max-md:h-[1px] bg-gradient-to-b max-md:bg-gradient-to-r from-transparent via-[#b300ff] to-transparent"></div>
+                <div className="max-md:hidden w-[0.1%] max-md:w-[80%] h-[70%] max-md:h-px bg-linear-to-b mz max-md:bg-linear-to-r from-transparent via-[#b300ff] to-transparent"></div>
 
                 {/* RIGHT SIDE: SLIDER AND QUOTE */}
                 <div className="w-[50%] max-md:w-[90%] h-[70%] max-md:h-[300px] flex flex-col justify-center items-center relative text-white">

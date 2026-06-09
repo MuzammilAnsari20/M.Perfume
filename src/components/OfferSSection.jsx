@@ -72,27 +72,27 @@ function OfferSSection() {
 
             {/* CONTENT CONTAINER */}
             <motion.div 
-                className="w-[50%] max-md:w-[90%] desktop-md:w-[90%] h-full max-md:h-[90%] desktop-md:h-[60%] bg-black/55 backdrop-blur-sm rounded-[50px]! max-md:rounded-[10px]! desktop-md:rounded-[10px]! box-border flex flex-col justify-center px-[100px]! max-md:px-[20px]! desktop-md:px-[20px]! gap-[10px]! text-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10"
+                className="w-[50%] max-md:w-[90%] desktop-md:w-[90%] h-full max-md:h-[90%] desktop-md:h-[60%] bg-black/55 backdrop-blur-sm rounded-[50px]! max-md:rounded-[10px]! desktop-md:rounded-[10px]! box-border flex flex-col justify-center px-[100px]! max-md:px-[20px]! desktop-md:px-[20px]! gap-[10px]! max-md:gap-0! text-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10"
                 variants={sectionVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: false, margin: "-5% 0px" }}
                 style={{ perspective: 1000 }}
             >
-                <motion.h6 variants={childVariants} className="text-[#D361EB] tracking-[8px] text-[13px]! monitor-md:text-[50px]! desktop-md:text-[16px]! mb-[20px]! uppercase font-bold">
+                <motion.h6 variants={childVariants} className="text-[#D361EB] max-md:text-center tracking-[8px] text-[13px]! monitor-md:text-[50px]! desktop-md:text-[16px]! mb-[20px]! uppercase font-bold">
                     Summer Fragrance Fiesta
                 </motion.h6>
 
-                <motion.h2 variants={childVariants} className="text-[42px]! monitor-md:text-[130px]! max-md:text-[28px]! desktop-md:text-[64px]! font-extrabold leading-[1.1]! mb-[25px]! drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">
-                    Get up to <span className="text-transparent bg-clip-text bg-linear-to-r from-[#E670FB] to-[#d3b195]">25% Off</span><br />
+                <motion.h2 variants={childVariants} className="max-md:text-center text-[42px]! monitor-md:text-[130px]! max-md:text-[28px]! desktop-md:text-[64px]! font-extrabold leading-[1.1]! mb-[25px]! drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">
+                    Get up to <span className=" text-transparent bg-clip-text bg-linear-to-r from-[#E670FB] to-[#d3b195]">25% Off</span><br />
                     Summer Fragrance
                 </motion.h2>
 
-                <motion.p variants={childVariants} className="text-[14px]! desktop-md:text-[18px]! monitor-md:text-[40px]! text-[#cfcfcf] leading-[1.8]! mb-[15px]! max-w-[50%px]">
+                <motion.p variants={childVariants} className="max-md:text-center text-[14px]! desktop-md:text-[18px]! monitor-md:text-[40px]! text-[#cfcfcf] leading-[1.8]! mb-[15px]! max-w-[50%px]">
                     Perfect for day or night, these scents will keep you feeling fresh and invigorated all summer long.
                 </motion.p>
 
-                <motion.div variants={childVariants} whileHover={{ scale: 1.1, rotate: 2 }} whileTap={{ scale: 0.9 }} className="mt-[15px]!">
+                <motion.div variants={childVariants} whileHover={{ scale: 1.1, rotate: 2 }} whileTap={{ scale: 0.9 }} className="max-md:text-center mt-[15px]!">
                     <motion.div animate={pulseButton} className="inline-block rounded-[30px]!">
                         <Link to="/" className="inline-block px-[32px]! max-md:px-[12px]! py-[14px]! max-md:py-[7px]! desktop-md:px-[45px]! monitor-md:px-[60px]! monitor-md:py-[20px]! desktop-md:py-[20px]! desktop-md:text-[20px]! monitor-md:text-[50px]! bg-gradient-to-r from-[#E670FB] to-[#7c30b3] text-white rounded-[30px]! no-underline text-[16px]! max-md:text-[12px]! font-bold border-2 border-[#E670FB]/50 transition-all hover:bg-gradient-to-l">
                             Discover Now
