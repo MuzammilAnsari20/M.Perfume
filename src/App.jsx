@@ -11,8 +11,6 @@ import OfferSSection from './components/OfferSSection';
 import Brands from './components/brand';
 import Review from './components/review';
 import Blog from './components/blog';
-import GeminiBlog from './components/gemiblog';
-import ClaudeBlog from './components/claudeblog';
 import SingleProduct from './components/singleProduct';
 import Women from './pages/women/women';
 import Contact from './pages/Contact/contact';
@@ -21,6 +19,7 @@ import MainLayout from './mainlayout';
 import Dashboard from './AdminLayout/pages/dashboard';
 import AdminLayout from './AdminLayout/admlayout';
 import Message from './AdminLayout/pages/messages';
+import { Design } from './components/design';
 
 
 
@@ -47,8 +46,6 @@ function App() {
               <Brands />
               <Review />
               <Blog />
-              <GeminiBlog />
-              <ClaudeBlog />
 
             </MainLayout>}
           />
@@ -58,6 +55,7 @@ function App() {
           <Route path="/singleproduct" element={<MainLayout><SingleProduct /></MainLayout>} />
           <Route path="/contact-me" element={<MainLayout><Contact /></MainLayout>} />
           <Route path="/about" element={<MainLayout><h1>About</h1></MainLayout>} />
+          <Route path="/design" element={<MainLayout><Design /></MainLayout>} />
 
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<Dashboard />} />

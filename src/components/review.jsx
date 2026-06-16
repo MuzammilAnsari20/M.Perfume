@@ -112,12 +112,11 @@ function Review() {
                         className="w-[60%] max-md:w-full h-full max-md:mt-5 flex flex-col justify-center text-white relative z-10 pl-5"
                         variants={slideRight}
                     >
-                        <h6 className="font-bold text-[30px] monitor-md:text-[70px] max-md:text-[24px] desktop-md:text-[42px] max-md:hidden">Voices of Elegance</h6>
-                        <h6 className="font-bold text-[30px] monitor-md:text-[70px] max-md:text-[24px] desktop-md:text-[42px] hidden max-md:block"><span className='text-[#ba00ba]'>M.Perfume</span>, Memories in Every Drop</h6>
+                        <h6 className="font-bold text-[30px] monitor-md:text-[70px] max-md:text-[24px] desktop-md:text-[42px]"><span className='text-[#ba00ba]'>M.Perfume</span>, Memories in Every Drop</h6>
                         <br />
                         <p className="font-light max-md:hidden text-[12px]! monitor-md:text-[30px]! max-md:text-[14px]! desktop-md:text-[22px]! text-gray-300">
-                            Discover authentic stories from M.Perfume devotees who've experienced the transformative power of our fragrances. 
-                            Each testimonial reflects a genuine connection—where quality, performance, and artistry meet to create unforgettable olfactory moments. 
+                            Discover authentic stories from M.Perfume devotees who've experienced the transformative power of our fragrances.
+                            Each testimonial reflects a genuine connection—where quality, performance, and artistry meet to create unforgettable olfactory moments.
                             These are the voices of those who understand that true fragrance isn't just about smelling good; it's about feeling exceptional.
                         </p>
                     </motion.div>

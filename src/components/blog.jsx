@@ -1,286 +1,127 @@
-import { motion } from "framer-motion";
-import { Title } from "./sectionTitle";
-
-import blog1 from "../assets/img/blog1.jpg";
-import blog2 from "../assets/img/blog2.webp";
-
-const blogData = [
-    {
-        id: 1,
-        image: blog1,
-        date: "20 June 2026",
-        category: "Perfume Education",
-        title: "Discover The Art Of Fragrance & Find Your Signature Scent",
-        description:
-            "Explore perfume families, notes and concentration levels to choose a fragrance that truly reflects your personality."
-    },
-    {
-        id: 2,
-        image: blog2,
-        date: "25 June 2026",
-        category: "Luxury Lifestyle",
-        title: "M.Perfume — Because Perfume Is Not Fragrance, It's Memories",
-        description:
-            "Every scent tells a story. Learn how fragrances become connected with emotions, places and unforgettable moments."
-    }
-];
+import { motion } from 'framer-motion'
+import blog1 from '../assets/img/blog/blog1.png'
+import blog2 from '../assets/img/blog/blog2.png'
+import blog3 from '../assets/img/blog/blog3.png'
+import { Title } from './sectionTitle';
 
 const containerVariants = {
     hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.2
-        }
-    }
-};
+    visible: { transition: { staggerChildren: 0.2 } }
+}
 
-const cardVariants = {
-    hidden: {
-        opacity: 0,
-        y: 100,
-        scale: 0.9
-    },
-    visible: {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        transition: {
-            duration: 0.8,
-            ease: "easeOut"
-        }
-    }
-};
+const scaleIn = {
+    hidden: { opacity: 0, scale: 0.96, y: 30 },
+    visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+}
+
+function BlogCard({ src, tag, title, date, readTime, large = false }) {
+    return (
+        <motion.div
+            variants={scaleIn}
+            className={`relative! overflow-hidden! rounded-[4px]! cursor-pointer! group!
+                ${large
+                    ? 'h-[420px]! md:h-[420px]!'
+                    : 'flex-1! md:flex-1! h-[200px]! md:h-auto!'
+                }`}
+        >
+            <img
+                src={src}
+                alt={title}
+                className="w-full! h-full! object-cover! transition-all! duration-700! brightness-75! saturate-75! group-hover:scale-105! group-hover:brightness-50! group-hover:saturate-50!"
+            />
+
+            <motion.div
+                className="absolute! bottom-0! left-0! h-[2px]! bg-[#c9a96e]!"
+                initial={{ width: 0 }}
+                whileHover={{ width: '100%' }}
+                transition={{ duration: 0.4 }}
+            />
+
+            <div
+                className="absolute! bottom-0! left-0! right-0! p-[24px]! md:p-[24px]!"
+                style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, transparent 100%)' }}
+            >
+                <span
+                    className="inline-block! text-[9px]! tracking-[2px]! uppercase! font-semibold! px-[10px]! py-[4px]! rounded-[2px]! mb-[10px]!"
+                    style={{ background: '#c9a96e', color: '#0a0a0a' }}
+                >
+                    {tag}
+                </span>
+
+                <h3
+                    className={`font-bold! text-[#f0e6d3]! leading-[1.35]! mb-[14px]!
+                        ${large
+                            ? 'text-[26px]! md:text-[26px]!'
+                            : 'text-[20px]! md:text-[20px]!'
+                        }`}
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                    {title}
+                </h3>
+
+                <div className="flex! items-center! gap-[16px]!">
+                    <span className="text-[11px]! tracking-[1px]! text-[#8a7a65]!">{date}</span>
+                    <span className="text-[11px]! tracking-[1px]! text-[#c9a96e]!">{readTime}</span>
+                </div>
+            </div>
+        </motion.div>
+    )
+}
 
 function Blog() {
     return (
         <section
-            className="
-            w-full
-            px-[60px]!
-            max-lg:px-[30px]!
-            max-md:px-[20px]!
-            py-[120px]!
-            relative
-            overflow-hidden
-        "
+            className="px-[60px]! md:px-[60px]!"
         >
-            {/* Background Glow */}
-
-            <div
-                className="
-                absolute
-                top-[-200px]
-                left-[-200px]
-                w-[500px]
-                h-[500px]
-                rounded-full
-                bg-[#D361EB20]
-                blur-[150px]
-                pointer-events-none
-            "
+            <Title 
+                subtitle="Blog"
+                title="Scent Stories Fragrance Notes"
             />
 
-            <div
-                className="
-                absolute
-                bottom-[-250px]
-                right-[-200px]
-                w-[500px]
-                h-[500px]
-                rounded-full
-                bg-[#D361EB15]
-                blur-[150px]
-                pointer-events-none
-            "
-            />
-
-            {/* Heading */}
-
+            {/* Grid — 2 col desktop, 1 col mobile */}
             <motion.div
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-            >
-                <Title
-                    subtitle="M.Perfume Blog"
-                    title="Luxury Stories & Updates"
-                />
-            </motion.div>
-
-            <div className="h-[70px]!" />
-
-            {/* Cards */}
-
-            <motion.div
-                className="
-                grid
-                grid-cols-2
-                max-lg:grid-cols-1
-                gap-[35px]!
-            "
+                className="py-[30px]! grid! md:gap-[20px]! gap-[16px]!
+                           grid-cols-1! md:grid-cols-[1.4fr_1fr]!"
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: '-5% 0px' }}
             >
-                {blogData.map((item) => (
-                    <motion.div
-                        key={item.id}
-                        variants={cardVariants}
-                        whileHover={{
-                            y: -12
-                        }}
-                        transition={{
-                            duration: 0.35
-                        }}
-                        className="
-                        relative
-                        h-[520px]!
-                        max-md:h-[430px]!
-                        rounded-[30px]!
-                        overflow-hidden
-                        cursor-pointer
-                        group
-                        border
-                        border-[#ffffff15]
-                        bg-[#111]
-                    "
-                    >
-                        {/* Image */}
+                <BlogCard
+                    src={blog1}
+                    tag="Featured"
+                    title="Discover the Art of Fragrance: A Guide to Perfume Types and Notes"
+                    date="June 20, 2024"
+                    readTime="5 min read"
+                    large={true}
+                />
 
-                        <motion.img
-                            src={item.image}
-                            alt={item.title}
-                            className="
-                            absolute
-                            inset-0
-                            w-full
-                            h-full
-                            object-cover
-                        "
-                            whileHover={{
-                                scale: 1.1
-                            }}
-                            transition={{
-                                duration: 0.7
-                            }}
-                        />
-
-                        {/* Overlay */}
-
-                        <div
-                            className="
-                            absolute
-                            inset-0
-                            bg-gradient-to-t
-                            from-black
-                            via-black/60
-                            to-black/10
-                        "
-                        />
-
-                        {/* Date */}
-
-                        <div
-                            className="
-                            absolute
-                            top-[25px]!
-                            left-[25px]!
-                            bg-[#D361EB]
-                            text-white
-                            px-[16px]!
-                            py-[8px]!
-                            rounded-full
-                            text-[13px]
-                            font-medium
-                        "
-                        >
-                            {item.date}
-                        </div>
-
-                        {/* Content */}
-
-                        <div
-                            className="
-                            absolute
-                            bottom-[35px]!
-                            left-[35px]!
-                            right-[35px]!
-                        "
-                        >
-                            <p
-                                className="
-                                text-[#D361EB]
-                                text-[14px]
-                                tracking-[2px]
-                                uppercase
-                                mb-[12px]!
-                            "
-                            >
-                                {item.category}
-                            </p>
-
-                            <h2
-                                className="
-                                text-white
-                                text-[34px]
-                                max-md:text-[24px]
-                                font-bold
-                                leading-tight
-                                mb-[15px]!
-                            "
-                            >
-                                {item.title}
-                            </h2>
-
-                            <p
-                                className="
-                                text-[#d1d1d1]
-                                leading-[1.8]
-                                mb-[25px]!
-                                max-md:text-[14px]
-                            "
-                            >
-                                {item.description}
-                            </p>
-
-                            <motion.button
-                                whileHover={{
-                                    x: 10
-                                }}
-                                className="
-                                flex
-                                items-center
-                                gap-[12px]!
-                                text-white
-                                font-semibold
-                            "
-                            >
-                                Read More
-                                <i className="fas fa-arrow-right"></i>
-                            </motion.button>
-                        </div>
-
-                        {/* Border Glow */}
-
-                        <div
-                            className="
-                            absolute
-                            inset-0
-                            border
-                            border-transparent
-                            group-hover:border-[#D361EB50]
-                            transition-all
-                            duration-500
-                            rounded-[30px]
-                        "
-                        />
-                    </motion.div>
-                ))}
+                {/* Side cards — row on mobile, column on desktop */}
+                <motion.div
+                    className="flex! flex-col! gap-[16px]! md:gap-[20px]!
+                               md:h-[420px]! h-auto!"
+                    variants={containerVariants}
+                >
+                    <BlogCard
+                        src={blog2}
+                        tag="Oud & Amber"
+                        title="The Secrets Behind Middle Eastern Oud Perfumery"
+                        date="May 14, 2024"
+                        readTime="3 min read"
+                    />
+                    <BlogCard
+                        src={blog3}
+                        tag="Florals"
+                        title="How to Layer Florals for a Signature Scent"
+                        date="Apr 8, 2024"
+                        readTime="4 min read"
+                    />
+                </motion.div>
             </motion.div>
         </section>
-    );
+    )
 }
 
-export default Blog;
+export default Blog
+
+   
