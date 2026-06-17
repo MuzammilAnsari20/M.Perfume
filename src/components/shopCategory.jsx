@@ -4,7 +4,7 @@ import sh2 from '../assets/img/collect-item4.png'
 import sh3 from '../assets/img/collect-item3.png'
 import sh4 from '../assets/img/collect-item1.png'
 import sh5 from '../assets/img/collect-item2.png'
-import { Title } from './sectionTitle';
+import Title  from './sectionTitle';
 
 function ShopCategory() {
     const sliderRef = useRef(null);

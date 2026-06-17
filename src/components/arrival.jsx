@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion"
 import products from '../data/product';
-import { Title } from './sectionTitle';
+import Title from './sectionTitle';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -16,15 +16,15 @@ const containerVariants = {
 
 const childVariants = {
     hidden: { opacity: 0, y: 80, scale: 0.9 },
-    visible: { 
-        opacity: 1, 
-        y: 0, 
-        scale: 1, 
-        transition: { 
-            type: "spring", 
-            damping: 12, 
-            stiffness: 100 
-        } 
+    visible: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: {
+            type: "spring",
+            damping: 12,
+            stiffness: 100
+        }
     }
 };
 
@@ -52,7 +52,7 @@ function Arrival({ secname, sectag, imgtitle, imgtag, asideimg }) {
                     className='w-[30%] max-md:w-full h-[80vh] desktop-md:h-[70vh] monitor-md:h-[60vh] max-md:h-[30vh] rounded-[20px] border border-white/20 relative flex items-center justify-center overflow-hidden shadow-[0_0_40px_rgba(211,97,235,0.15)] group cursor-pointer'
                 >
                     <div className="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-all duration-700"></div>
-                    <motion.div 
+                    <motion.div
                         className="aside-text relative z-10 text-center"
                         whileHover={{ scale: 1.1 }}
                         transition={{ type: "spring", stiffness: 300 }}
@@ -66,7 +66,7 @@ function Arrival({ secname, sectag, imgtitle, imgtag, asideimg }) {
                     whileInView="visible"
                     viewport={{ once: false, margin: "-10% 0px" }}
                 >
-                    <motion.div 
+                    <motion.div
                         className="max-md:hidden!"
                         initial={{ opacity: 0, y: -30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -77,24 +77,24 @@ function Arrival({ secname, sectag, imgtitle, imgtag, asideimg }) {
 
                     <div className='flex gap-10 desktop-md:gap-14 w-full'>
                         {arrivalProducts.map((product) => (
-                        <Link to="/" key={product.id} className='w-1/3 max-md:w-full flex flex-col items-center justify-center relative group'>
-                            <motion.div 
-                                className="arrival-item p-6 rounded-[25px] shadow-lg w-full flex flex-col items-center justify-center transition-colors" 
-                                variants={childVariants}
-                            >
-                                <motion.img 
-                                    className='w-[80%] max-md:w-full object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.5)] mb-6' 
-                                    src={product.img} 
-                                    alt={product.name} 
-                                    whileHover={{ rotate: 8, scale: 1.15 }}
-                                    transition={{ type: "spring", stiffness: 200, damping: 10 }}
-                                />
-                                <h6 className='font-light text-center text-[#d3b195] desktop-md:text-[24px] monitor-md:text-[35px]! text-xs tracking-[3px] uppercase mb-1'>{product.tag}</h6>
-                                <h5 className='text-center text-white text-xl desktop-md:text-[34px] monitor-md:text-[65px]! font-medium mb-1'>{product.name}</h5>
-                                <h5 className='text-center text-[#E670FB] text-lg desktop-md:text-[34px] monitor-md:text-[55px]! font-bold'>{product.price}</h5>
-                            </motion.div>
-                        </Link>
-                    ))}
+                            <Link to="/" key={product.id} className='w-1/3 max-md:w-full flex flex-col items-center justify-center relative group'>
+                                <motion.div
+                                    className="arrival-item p-6 rounded-[25px] shadow-lg w-full flex flex-col items-center justify-center transition-colors"
+                                    variants={childVariants}
+                                >
+                                    <motion.img
+                                        className='w-[80%] max-md:w-full object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.5)] mb-6'
+                                        src={product.img}
+                                        alt={product.name}
+                                        whileHover={{ rotate: 8, scale: 1.15 }}
+                                        transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                                    />
+                                    <h6 className='font-light text-center text-[#d3b195] desktop-md:text-[24px] monitor-md:text-[35px]! text-xs tracking-[3px] uppercase mb-1'>{product.tag}</h6>
+                                    <h5 className='text-center text-white text-xl desktop-md:text-[34px] monitor-md:text-[65px]! font-medium mb-1'>{product.name}</h5>
+                                    <h5 className='text-center text-[#E670FB] text-lg desktop-md:text-[34px] monitor-md:text-[55px]! font-bold'>{product.price}</h5>
+                                </motion.div>
+                            </Link>
+                        ))}
                     </div>
 
                 </motion.div>

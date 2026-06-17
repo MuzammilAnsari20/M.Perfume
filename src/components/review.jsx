@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import mine from "../assets/img/mine.png";
-import qoute from "../assets/img/float-img/qoute.png";
+import mine from "@/assets/img/mine.png";
+import qoute from "@/assets/img/float-img/qoute.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-import { Title } from './sectionTitle';
+import Title from './sectionTitle';
 
 const reviews = [
     {

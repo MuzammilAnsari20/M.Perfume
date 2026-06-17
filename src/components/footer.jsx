@@ -1,5 +1,5 @@
 
-import footerlogo from "../assets/img/mainLogo.png"
+import footerlogo from "@/assets/img/mainLogo.png"
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faInstagram, faPinterest, faTiktok, faWhatsapp, faYoutube } from '@fortawesome/free-brands-svg-icons';

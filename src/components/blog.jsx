@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import blog1 from '../assets/img/blog/blog1.png'
 import blog2 from '../assets/img/blog/blog2.png'
 import blog3 from '../assets/img/blog/blog3.png'
-import { Title } from './sectionTitle';
+import Title from './sectionTitle';
 
 const containerVariants = {
     hidden: {},
@@ -73,7 +73,7 @@ function Blog() {
         <section
             className="px-[60px]! max-md:px-[20px]! md:px-[60px]!"
         >
-            <Title 
+            <Title
                 subtitle="Blog"
                 title="Scent Stories Fragrance Notes"
             />
@@ -124,4 +124,3 @@ function Blog() {
 
 export default Blog
 
-   

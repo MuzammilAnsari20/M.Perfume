@@ -20,6 +20,7 @@ import Dashboard from './AdminLayout/pages/dashboard';
 import AdminLayout from './AdminLayout/admlayout';
 import Message from './AdminLayout/pages/messages';
 import { Design } from './components/design';
+import hero_image from '@/assets/img/header1.png'
 
 
 
@@ -32,7 +33,17 @@ function App() {
           <Route path="/" element={
             <MainLayout>
 
-              <HeroBanner />
+              <HeroBanner 
+              hidden={false}
+              header_bg={hero_image}
+              subtitle="M.Perfume"
+              highlight1="Collection"
+              year="2026"
+              title="Where Passion meet"
+              highlight2="Elegance"
+              justlint="The Scent of Unforgettable Moments."
+
+              />
               <Offersection />
               <ShopCategory />
               <Explore />

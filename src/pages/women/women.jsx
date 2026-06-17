@@ -1,15 +1,24 @@
-import asideimg from '../../assets/img/women/womenaside.jpg'
-import Arrival from '../../components/arrival';
-import OfferSection from '../../components/OfferSection';
-import Womenheader from './component/womenheader';
-import Products from './component/products';
-import Brands from '../../components/brand';
-import Blog from '../../components/blog';
+import asideimg from '@/assets/img/women/womenaside.jpg'
+import Arrival from '@/components/arrival';
+import OfferSection from '@/components/OfferSection';
+import Womenheader from '@/components/heroBanner';
+import Products from '@/pages/women/component/products';
+import Brands from '@/components/brand';
+import hero_image from '@/assets/img/women/women_header.png'
 
 function Women() {
   return (
     <>
-      <Womenheader />
+      <Womenheader 
+      hidden={true}
+      header_bg={hero_image}
+              subtitle="Women"
+              highlight1="Collection"
+              year="2026"
+              title="Where Passion meet"
+              highlight2="Elegance"
+              justlint="The Scent of Unforgettable Moments."
+      />
       <OfferSection />
       <Products />
       <Brands />
@@ -19,7 +28,6 @@ function Women() {
         imgtitle="Summer Collections"
         asideimg={asideimg}
       />
-      <Blog />
     </>
   );
 }

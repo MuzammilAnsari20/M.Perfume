@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import float_image1 from '../assets/img/float-img/arrival2.png'
-import float_image2 from '../assets/img/float-img/hero.png'
-import float_image3 from '../assets/img/float-img/arrival3.png'
-import header_bg from '../assets/img/header1.png'
+import float_image1 from '@/assets/img/float-img/arrival2.png'
+import float_image2 from '@/assets/img/float-img/hero.png'
+import float_image3 from '@/assets/img/float-img/arrival3.png'
 
 const containerVariants = {
     hidden: {},
@@ -19,16 +18,17 @@ const childVariants = {
 };
 
 
-function HeroBanner() {
+function HeroBanner({header_bg, subtitle, highlight1, year, title, highlight2, justlint, hidden}) {
     return (
         <>
             <section
                 className="h-[70vh] max-md:h-[48vh] w-full box-border flex max-md:flex-col-reverse relative items-center justify-between max-md:justify-center bg-center bg-cover max-md:py-5! max-md:gap-2"
                 style={{ backgroundImage: `url(${header_bg})` }}
             >
+                <div className="bg-[#0000003b] w-full! h-full! top-0 left-0 absolute z-10"></div>
 
                 {/* Text */}
-                <div className="w-1/2 max-md:w-full flex items-center justify-center">
+                <div className="w-1/2 max-md:w-full flex items-center justify-center z-50">
                     <motion.div
                         className="max-w-[1050px] max-md:flex max-md:flex-col max-md:items-center px-5"
                         variants={containerVariants}
@@ -36,18 +36,18 @@ function HeroBanner() {
                         whileInView="visible"
                         viewport={{ once: false, amount: 0.6 }}
                     >
-                        <motion.h1 variants={childVariants} className="text-white text-1xl max-md:text-[22px]! desktop-md:text-[34px] monitor-md:text-[60px] font-bold Poppins">M.Perfume</motion.h1>
+                        <motion.h1 variants={childVariants} className="text-white text-1xl max-md:text-[22px]! desktop-md:text-[34px] monitor-md:text-[60px] font-bold Poppins">{subtitle}</motion.h1>
 
-                        <motion.h1 variants={childVariants} className="text-white text-6xl max-md:text-[32px]! desktop-md:text-[76px] monitor-md:text-[100px] font-bold Poppins"><span className="text-[#D361EB]">Collection</span> 2026</motion.h1>
+                        <motion.h1 variants={childVariants} className="text-white text-6xl max-md:text-[32px]! desktop-md:text-[76px] monitor-md:text-[100px] font-bold Poppins"><span className="text-[#D361EB]">{highlight1}</span>{year}</motion.h1>
 
-                        <motion.h1 variants={childVariants} className="text-white text-lg max-md:text-[14px]! desktop-md:text-[34px] monitor-md:text-[60px] Poppins">Where Passion meet <span className="text-[#D361EB]">Elegance</span></motion.h1>
+                        <motion.h1 variants={childVariants} className="text-white text-lg max-md:text-[14px]! desktop-md:text-[34px] monitor-md:text-[60px] Poppins">{title} <span className="text-[#D361EB]">{highlight2}</span></motion.h1>
 
-                        <motion.h6 variants={childVariants} className="text-white text-[12px] max-md:text-[12px]! desktop-md:text-[26px] monitor-md:text-[46px] Poppins">The Scent of Unforgettable Moments.</motion.h6>
+                        <motion.h6 variants={childVariants} className="text-white text-[12px] max-md:text-[12px]! desktop-md:text-[26px] monitor-md:text-[46px] Poppins">{justlint}</motion.h6>
                     </motion.div>
                 </div>
 
                 {/* Images */}
-                <div className="w-1/2 max-md:w-full flex items-center justify-center relative h-[500px] max-md:h-[250px]">
+                <div className={`w-1/2 max-md:w-full flex items-center justify-center relative h-[500px] max-md:h-[250px] ${hidden ? "hidden" : ""}`}>
 
                     <img
                         src={float_image1}

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
-import women from "../assets/img/women.png";
-import men from "../assets/img/men.png";
+import women from "@/assets/img/women.png";
+import men from "@/assets/img/men.png";
 
 function Explore() {
     return (

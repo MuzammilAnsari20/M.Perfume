@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import products from '../../../data/product';
 import usePagination from '../../../hooks/usePagination';
+import Title from '@/components/sectionTitle';
 
 function Products() {
   const menProducts = products.filter((p) => p.gender === 'men');
@@ -10,16 +11,16 @@ function Products() {
   return (
     <>
       <div className="w-full px-[60px]!">
-        <div className="text">
-          <h6 className="gsp-text">Men</h6>
-          <h5 className="gsp-text">Premium Perfume Collection</h5>
-        </div>
+        <Title 
+        subtitle="Men"
+        title="Premium Perfume Collection"
+        />
 
         {/* Cards Grid */}
         <div className="w-full h-auto mt-[2rem]! p-10! grid justify-items-center grid-cols-4 gap-10">
           {currentItems.map((product) => (
             <Link to="/singleproduct" className="no-underline" key={product.id}>
-              <div className="w-60 h-[65vh] rounded-[10px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-400">
+              <div className="w-60 h-[65vh] rounded-[10px] overflow-hidden">
                 <div
                   className="w-full h-70 bg-cover bg-center"
                   style={{ backgroundImage: `url(${product.img})` }}

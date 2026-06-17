@@ -1,11 +1,11 @@
 import React from "react";
-import RelatedProduct from '../../components/relatedproduct';
-import bgContact from '../../assets/img/contactme.jpg';
-import useContactHook from "../../hooks/useContactHook";
+import RelatedProduct from '@/components/relatedproduct';
+import bgContact from '@/assets/img/contactme.jpg';
+import useContactHook from "@/hooks/useContactHook";
 
 function Contact() {
 
-   const {formValue, handleChange, handleSubmit} = useContactHook();
+    const { formValue, handleChange, handleSubmit } = useContactHook();
 
     return (
         <>

@@ -1,6 +1,6 @@
-import user_icon from '../../assets/img/Admin/users.png'
-import views_icon from '../../assets/img/Admin/views.png'
-import profit_icon from '../../assets/img/Admin/profit.png'
+import user_icon from '@/assets/img/Admin/users.png'
+import views_icon from '@/assets/img/Admin/views.png'
+import profit_icon from '@/assets/img/Admin/profit.png'
 import Table from '../components/table';
 import { motion } from "framer-motion";
 
