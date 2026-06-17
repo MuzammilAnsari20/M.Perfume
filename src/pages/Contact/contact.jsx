@@ -10,12 +10,12 @@ function Contact() {
     return (
         <>
 
-            <div className="w-full h-fit mt-10! p-[30px]! bg-center bg-cover bg-no-repeat bg-fixed"
+            <div className="w-full h-fit mt-10! max-md:mt-0! p-[30px]! bg-center bg-cover bg-no-repeat bg-fixed"
                 style={{ backgroundImage: `url(${bgContact})` }}>
 
-                <div className="w-full pt-10! pb-10! flex flex-col items-center justify-center">
+                <div className="w-full pt-10! max-md:pt-0! pb-10! flex flex-col items-center justify-center">
 
-                    <h1 className="w-[60%] font-extrabold text-[34px] tracking-[3px]">Contact Me</h1>
+                    <h1 className="w-[60%] max-md:w-full text-center font-extrabold text-[34px] tracking-[3px]">Contact Me</h1>
 
                     <br></br>
 
@@ -28,9 +28,9 @@ function Contact() {
                     <br></br>
                     <br></br> */}
 
-                    <form className="w-[60%] mx-auto mb-15!" onSubmit={handleSubmit}>
+                    <form className="w-[60%] max-md:w-[90%] mx-auto mb-15!" onSubmit={handleSubmit}>
 
-                        <div className="grid md:grid-cols-2 md:gap-6 mb-15!">
+                        <div className="grid md:grid-cols-2 md:gap-6 mb-15! max-md:mb-5!">
 
                             <div className="relative z-0 w-full mb-5! group">
                                 <input type="text" name="first_name" value={formValue.first_name} onChange={handleChange} id="floating_first_name" className="block py-2.5! px-0! w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer" placeholder=" " required />
@@ -62,7 +62,7 @@ function Contact() {
 
                         <button
                             type="submit"
-                            className="relative overflow-hidden cursor-pointer rounded-[5px] px-20! py-2! text-white transition-all duration-500 ease-in-out z-10
+                            className="relative max-md:w-full overflow-hidden cursor-pointer rounded-[5px] px-20! py-2! text-white transition-all duration-500 ease-in-out z-10
                                         bg-[linear-gradient(13deg,rgba(212,105,255,1)_0%,rgba(57,0,92,1)_86%)] 
                                         before:content-[''] before:absolute before:inset-0 
                                         before:bg-[linear-gradient(188deg,rgba(212,102,255,1)_0%,rgba(57,0,92,1)_86%)] 
@@ -72,7 +72,7 @@ function Contact() {
                         </button>
                     </form>
 
-                    <p className="w-[60%] mx-auto text-[10px] text-[grey] italic">Please describe the specific issue or challenge you are currently facing so I can work through it together.</p>
+                    <p className="w-[60%] max-md:w-full max-md:text-center mx-auto text-[10px] text-[grey] italic">Please describe the specific issue or challenge you are currently facing so I can work through it together.</p>
 
                 </div>
 

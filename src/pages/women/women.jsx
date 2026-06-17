@@ -2,7 +2,7 @@ import asideimg from '@/assets/img/women/womenaside.jpg'
 import Arrival from '@/components/arrival';
 import OfferSection from '@/components/OfferSection';
 import Womenheader from '@/components/heroBanner';
-import Products from '@/pages/women/component/products';
+import Products from '@/components/products';
 import Brands from '@/components/brand';
 import hero_image from '@/assets/img/women/women_header.png'
 
@@ -20,7 +20,9 @@ function Women() {
               justlint="The Scent of Unforgettable Moments."
       />
       <OfferSection />
-      <Products />
+      <Products 
+      gender="women"
+      />
       <Brands />
       <Arrival
         secname="Summer Collections"
