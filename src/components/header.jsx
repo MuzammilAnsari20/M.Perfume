@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import main_logo from '../assets/img/logo.png'
+import main_logo from '@/assets/img/mainLogo.png'
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faCartShopping } from '@fortawesome/free-solid-svg-icons';
@@ -25,17 +25,17 @@ function Header() {
                 </div>
             </div>
 
-            <div className="bg-black flex items-center justify-between px-[100px]! max-md:px-[20px]! relative">
-                <div className="w-[7vw] max-md:w-[20%]">
+            <div className="bg-black flex items-center justify-between px-[100px]! py-5! max-md:px-[20px]! relative">
+                <div className="w-[9vw] max-md:w-[20%]">
                     <img className='w-full' src={main_logo} alt="" />
                 </div>
 
                 <ul className="nav-links flex list-none gap-[35px] max-md:hidden" id="navLinks">
-                    <li className='text-[1.2vw]'><NavLink to="/" className={({isActive}) => isActive ? "active" : "" }>Home</NavLink></li>
-                    <li className='text-[1.2vw]'><NavLink to="/men" className={({isActive}) => isActive ? "active" : "" }>Men</NavLink></li>
-                    <li className='text-[1.2vw]'><NavLink to="/women" className={({isActive}) => isActive ? "active" : "" }>Women</NavLink></li>
-                    <li className='text-[1.2vw]'><NavLink to="/contact-me" className={({isActive}) => isActive ? "active" : "" }>Contact</NavLink></li>
-                    <li className='text-[1.2vw]'><NavLink to="/about" className={({isActive}) => isActive ? "active" : "" }>About</NavLink></li>
+                    <li className='text-[1.2vw]'><NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink></li>
+                    <li className='text-[1.2vw]'><NavLink to="/men" className={({ isActive }) => isActive ? "active" : ""}>Men</NavLink></li>
+                    <li className='text-[1.2vw]'><NavLink to="/women" className={({ isActive }) => isActive ? "active" : ""}>Women</NavLink></li>
+                    <li className='text-[1.2vw]'><NavLink to="/contact-me" className={({ isActive }) => isActive ? "active" : ""}>Contact</NavLink></li>
+                    <li className='text-[1.2vw]'><NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>About</NavLink></li>
                 </ul>
 
                 <div className="nav-icons max-md:hidden">
@@ -51,20 +51,20 @@ function Header() {
                 </div>
             </div>
             <div id="hellos" className={isActive ? "active" : ""}>
-               <div className="w-full bg-[#11001f] hidden max-md:flex flex-col gap-[20px] h-full justify-center items-center py-[20px]! text-[#bbb]">
-                <ul className="nav-links flex flex-col text-center list-none gap-[5px]" id="navLinks">
-                    <li><NavLink to="/" className={({isActive}) => isActive ? "active" : "" }>Home</NavLink></li>
-                    <li><NavLink to="/men" className={({isActive}) => isActive ? "active" : "" }>Men</NavLink></li>
-                    <li><NavLink to="/women" className={({isActive}) => isActive ? "active" : "" }>Women</NavLink></li>
-                    <li><NavLink to="/contact-me" className={({isActive}) => isActive ? "active" : "" }>Contact</NavLink></li>
-                    <li><NavLink to="/about" className={({isActive}) => isActive ? "active" : "" }>About</NavLink></li>
-                </ul>
-                <div className="nav-icons">
-                    <span className="text-[#D361EB] ml-[15px]! cursor-pointer"><i className="fas fa-search"></i></span>
-                    <span className="text-[#D361EB] ml-[15px]! cursor-pointer"><i className="fas fa-heart"></i></span>
-                    <span className="text-[#D361EB] ml-[15px]! cursor-pointer"><i className="fas fa-user"></i></span>
+                <div className="w-full bg-[#11001f] hidden max-md:flex flex-col gap-[20px] h-full justify-center items-center py-[20px]! text-[#bbb]">
+                    <ul className="nav-links flex flex-col text-center list-none gap-[5px]" id="navLinks">
+                        <li><NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink></li>
+                        <li><NavLink to="/men" className={({ isActive }) => isActive ? "active" : ""}>Men</NavLink></li>
+                        <li><NavLink to="/women" className={({ isActive }) => isActive ? "active" : ""}>Women</NavLink></li>
+                        <li><NavLink to="/contact-me" className={({ isActive }) => isActive ? "active" : ""}>Contact</NavLink></li>
+                        <li><NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>About</NavLink></li>
+                    </ul>
+                    <div className="nav-icons">
+                        <span className="text-[#D361EB] ml-[15px]! cursor-pointer"><i className="fas fa-search"></i></span>
+                        <span className="text-[#D361EB] ml-[15px]! cursor-pointer"><i className="fas fa-heart"></i></span>
+                        <span className="text-[#D361EB] ml-[15px]! cursor-pointer"><i className="fas fa-user"></i></span>
+                    </div>
                 </div>
-               </div>
             </div>
         </>
     );

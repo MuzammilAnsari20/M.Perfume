@@ -18,7 +18,7 @@ function BlogCard({ src, tag, title, date, readTime, large = false }) {
     return (
         <motion.div
             variants={scaleIn}
-            className={`relative! overflow-hidden! rounded-[4px]! cursor-pointer! group!
+            className={`relative! monitor-md:h-[50vh]! overflow-hidden! rounded-[4px]! cursor-pointer! group!
                 ${large
                     ? 'h-[420px]! md:h-[420px]!'
                     : 'flex-1! md:flex-1! h-[200px]! md:h-auto!'
@@ -42,14 +42,14 @@ function BlogCard({ src, tag, title, date, readTime, large = false }) {
                 style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, transparent 100%)' }}
             >
                 <span
-                    className="inline-block! text-[9px]! tracking-[2px]! uppercase! font-semibold! px-[10px]! py-[4px]! rounded-[2px]! mb-[10px]!"
+                    className="inline-block! text-[9px]! monitor-md:text-5xl! max-md:text-1xl! tracking-[2px]! uppercase! font-semibold! px-[10px]! monitor-md:px-[40px]! py-[4px]! monitor-md:py-[14px]! rounded-[2px]! mb-[10px]!"
                     style={{ background: '#c9a96e', color: '#0a0a0a' }}
                 >
                     {tag}
                 </span>
 
                 <h3
-                    className={`font-bold! text-[#f0e6d3]! leading-[1.35]! mb-[14px]!
+                    className={`font-bold! monitor-md:text-8xl! max-md:text-[16px]! text-[#f0e6d3]! leading-[1.35]! mb-[14px]!
                         ${large
                             ? 'text-[26px]! md:text-[26px]!'
                             : 'text-[20px]! md:text-[20px]!'
@@ -60,8 +60,8 @@ function BlogCard({ src, tag, title, date, readTime, large = false }) {
                 </h3>
 
                 <div className="flex! items-center! gap-[16px]!">
-                    <span className="text-[11px]! tracking-[1px]! text-[#8a7a65]!">{date}</span>
-                    <span className="text-[11px]! tracking-[1px]! text-[#c9a96e]!">{readTime}</span>
+                    <span className="text-[11px]! monitor-md:text-5xl! tracking-[1px]! text-[#8a7a65]!">{date}</span>
+                    <span className="text-[11px]! monitor-md:text-5xl! tracking-[1px]! text-[#c9a96e]!">{readTime}</span>
                 </div>
             </div>
         </motion.div>
@@ -71,7 +71,7 @@ function BlogCard({ src, tag, title, date, readTime, large = false }) {
 function Blog() {
     return (
         <section
-            className="px-[60px]! md:px-[60px]!"
+            className="px-[60px]! max-md:px-[20px]! md:px-[60px]!"
         >
             <Title 
                 subtitle="Blog"
@@ -98,7 +98,7 @@ function Blog() {
 
                 {/* Side cards — row on mobile, column on desktop */}
                 <motion.div
-                    className="flex! flex-col! gap-[16px]! md:gap-[20px]!
+                    className="flex! monitor-md:h-[50vh]! flex-col! gap-[16px]! md:gap-[20px]!
                                md:h-[420px]! h-auto!"
                     variants={containerVariants}
                 >
