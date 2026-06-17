@@ -27,7 +27,7 @@ function Header() {
 
             <div className="bg-black flex items-center justify-between px-[100px]! py-5! max-md:px-[20px]! relative">
                 <div className="w-[9vw] max-md:w-[30%]">
-                    <img className='w-full' src={main_logo} alt="" />
+                    <NavLink to="/"><img className='w-full' src={main_logo} alt="" /></NavLink>
                 </div>
 
                 <ul className="nav-links flex list-none gap-[35px] max-md:hidden" id="navLinks">
